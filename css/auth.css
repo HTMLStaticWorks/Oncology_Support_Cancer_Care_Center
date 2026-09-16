@@ -1,0 +1,235 @@
+/* 
+  Oncura Cancer Care Center - Auth Page Styles
+*/
+
+body.auth-body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: var(--bg-gray);
+    padding: 20px;
+}
+
+.auth-card {
+    background-color: var(--bg-card);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: var(--shadow-lg);
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+}
+
+.auth-header {
+    margin-bottom: 30px;
+}
+
+.auth-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    position: relative;
+    padding-right: 54px;
+}
+
+.auth-top .auth-logo {
+    font-size: 1.25rem;
+    font-weight: 800;
+    gap: 10px;
+}
+
+.auth-top #theme-toggle {
+    width: 42px;
+    height: 42px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.auth-header h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.auth-header p {
+    color: var(--text-muted);
+}
+
+.auth-form {
+    text-align: left;
+    margin-bottom: 25px;
+}
+
+.auth-form .form-group {
+    margin-bottom: 20px;
+}
+
+.auth-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.auth-form input {
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+    background: var(--bg-card);
+    color: var(--text-main);
+    font-family: inherit;
+}
+
+.auth-form input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(var(--primary-rgb), 0.1);
+}
+
+.btn-auth {
+    width: 100%;
+    padding: 14px;
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+.auth-body .btn-primary.btn-auth {
+    background: var(--secondary);
+}
+
+.auth-body .btn-primary.btn-auth:hover {
+    background: var(--secondary-dark);
+}
+
+.auth-card a:hover,
+.auth-card a:focus-visible {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.auth-card a:hover {
+    color: var(--secondary) !important;
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 25px 0;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background-color: var(--border-color);
+}
+
+.btn-social {
+    width: 100%;
+    padding: 12px;
+    border-radius: var(--border-radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+}
+
+.btn-google {
+    background-color: #DB4437;
+}
+
+.btn-google:hover {
+    background-color: #C1352A;
+}
+
+.btn-email-social {
+    background-color: #6B7280;
+}
+
+.btn-email-social:hover {
+    background-color: #4B5563;
+}
+
+.btn-apple {
+    background-color: #000000;
+}
+
+.btn-apple:hover {
+    background-color: #333333;
+}
+
+.form-options {
+    display: flex !important;
+    flex-flow: row nowrap !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    margin-top: 12px !important;
+    width: 100% !important;
+}
+
+.auth-form .remember-me {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    font-size: 0.85rem !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    line-height: 1.2 !important;
+    user-select: none !important;
+    white-space: nowrap !important;
+    margin-bottom: 0 !important; /* Override potential label margins */
+}
+
+.remember-me input {
+    width: 14px !important;
+    height: 14px !important;
+    margin: 0 !important;
+    cursor: pointer !important;
+    accent-color: var(--primary) !important;
+    transform: translateY(-1px) !important;
+}
+
+.forgot-password-link {
+    font-size: 0.85rem !important;
+    color: var(--primary) !important;
+    font-weight: 600 !important;
+    white-space: nowrap !important;
+    text-decoration: none !important;
+}
+
+.auth-footer {
+    margin-top: 25px;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+}
+
+.auth-footer a {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.checkbox-group input {
+    width: auto;
+}

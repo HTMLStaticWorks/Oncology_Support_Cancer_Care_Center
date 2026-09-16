@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Specialized Care | Oncura Cancer Care Center</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <style>
+        @media (min-width: 768px) and (max-width: 1023px) {
+            #home2-tailored .cards-grid {
+                display: flex !important;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 20px;
+            }
+
+            #home2-tailored .cards-grid > div {
+                flex: 0 0 calc(50% - 10px);
+                max-width: calc(50% - 10px);
+                box-sizing: border-box;
+            }
+
+            #home2-tailored .cards-grid > div:last-child:nth-child(odd) {
+                flex: 0 0 calc(50% - 10px);
+                max-width: calc(50% - 10px);
+            }
+        }
+    </style>
+</head>
+
+<body class="home2-page">
+
+    <!-- Drawer Overlay -->
+    <div id="drawer-overlay" class="drawer-overlay"></div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-drawer" class="mobile-drawer">
+        <div class="drawer-header">
+            <a href="index.html" class="logo">
+                <i class="logo-icon"><i class="fa-solid fa-ribbon"></i></i> Oncura
+            </a>
+            <button type="button" id="drawer-close" class="toggle-btn drawer-close" aria-label="Close menu">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <a href="index.html" class="mobile-link">Home</a>
+        <a href="home2.html" class="mobile-link active">Care</a>
+        <a href="about.html" class="mobile-link">Team</a>
+        <a href="services.html" class="mobile-link">Services</a>
+        <a href="blog.html" class="mobile-link">Resources</a>
+        <a href="contact.html" class="mobile-link">Contact</a>
+        <a href="dashboard.html" class="mobile-link">Portal</a>
+    </div>
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <div id="hamburger" class="hamburger"><i class="fa-solid fa-bars"></i></div>
+            <a href="index.html" class="logo">
+                <i class="logo-icon"><i class="fa-solid fa-ribbon"></i></i> Oncura
+            </a>
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="home2.html" class="nav-link active">Care</a>
+                <a href="about.html" class="nav-link">Team</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="blog.html" class="nav-link">Resources</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="dashboard.html" class="nav-link">Portal</a>
+            </nav>
+            <div class="nav-actions">
+                <button id="rtl-toggle" class="toggle-btn"><i class="fa-solid fa-right-left"></i></button>
+                <button id="theme-toggle" class="toggle-btn">🌙</button>
+                <a href="login.html" class="btn btn-outline hide-mobile" style="padding: 10px 20px;">Portal Login</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Alternative Hero Section -->
+    <section class="section" style="padding: 0; background-image: linear-gradient(rgba(13, 118, 133, 0.8), rgba(11, 19, 30, 0.9)), url('img/oncology_hero.jpg'); background-size: cover; background-position: center; min-height: calc(100vh - 70px); display: flex; align-items: center; color: white; text-align: center;">
+        <div class="container">
+            <div style="max-width: 850px; margin: 0 auto;">
+                <span class="badge" style="background: rgba(255, 255, 255, 0.2); color: white; margin-bottom: 20px; display: inline-block;">
+                    <i class="fa-solid fa-ribbon"></i> SPECIALIZED ONCOLOGY EXCELLENCE
+                </span>
+                <h1 style="font-size: clamp(2rem, 3.5vw, 3rem); line-height: 1.2; margin-bottom: 1.25rem; color: white;">
+                    Advanced Oncology, <br><span style="color: var(--secondary-light);">Tailored for You.</span>
+                </h1>
+                <p style="font-size: 1.25rem; color: rgba(255, 255, 255, 0.9); margin-bottom: 2.5rem; line-height: 1.7;">
+                    Experience precision medicine paired with genuine empathy. From tumor board staging to chemotherapy cycles and radiation coordination, your health is our sole priority.
+                </p>
+                <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                    <a href="dashboard.html" class="btn btn-primary" style="padding: 16px 36px;">Patient Portal</a>
+                    <a href="contact.html" class="btn btn-secondary" style="padding: 16px 36px;">Schedule Intake</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tailored Oncology Focus Section -->
+    <section class="section" id="home2-tailored" style="padding: 90px 0;">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Pillars of Specialized Cancer Care</h2>
+                <p class="text-muted">Targeted multidisciplinary clinical excellence at every stage.</p>
+            </div>
+            <div class="cards-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px;">
+                <div
+                    style="padding: 40px; border: 1px solid var(--border-color); border-radius: 12px; text-align: left; background: var(--bg-card); transition: var(--transition); box-shadow: var(--shadow-sm);">
+                    <i class="fa-solid fa-vial-circle-check"
+                        style="font-size: 2.5rem; color: var(--primary); margin-bottom: 20px;"></i>
+                    <h3 style="margin-bottom: 15px;">Targeted Infusions</h3>
+                    <p class="text-muted">Biomarker-matched chemotherapy and immunotherapy formulated on-site for optimal tumor targeting and tolerability.</p>
+                </div>
+                <div
+                    style="padding: 40px; border: 1px solid var(--border-color); border-radius: 12px; text-align: left; background: var(--bg-card); transition: var(--transition); box-shadow: var(--shadow-sm);">
+                    <i class="fa-solid fa-calendar-check"
+                        style="font-size: 2.5rem; color: var(--secondary); margin-bottom: 20px;"></i>
+                    <h3 style="margin-bottom: 15px;">Treatment Schedules</h3>
+                    <p class="text-muted">Transparent tracking of infusion cycles, recovery days, blood count checks, and oncology follow-up consultations.</p>
+                </div>
+                <div
+                    style="padding: 40px; border: 1px solid var(--border-color); border-radius: 12px; text-align: left; background: var(--bg-card); transition: var(--transition); box-shadow: var(--shadow-sm);">
+                    <i class="fa-solid fa-user-doctor"
+                        style="font-size: 2.5rem; color: var(--accent-dark); margin-bottom: 20px;"></i>
+                    <h3 style="margin-bottom: 15px;">Nurse Navigators</h3>
+                    <p class="text-muted">Dedicated clinical navigators to answer questions, manage symptom flares, and guide insurance approvals seamlessly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature Section: Infusion Suites -->
+    <section class="section" style="background-color: var(--bg-gray); padding: 90px 0;">
+        <div class="container">
+            <div style="display: flex; flex-direction: row-reverse; flex-wrap: wrap; gap: 50px; align-items: center;">
+                <div style="flex: 1; min-width: 300px; border-radius: var(--border-radius); overflow: hidden; box-shadow: var(--shadow-lg);">
+                    <img src="img/chemo_suite.jpg" alt="Cancer Infusion Suite" style="width: 100%; height: auto; object-fit: cover;">
+                </div>
+                <div style="flex: 1; min-width: 300px;">
+                    <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem; line-height: 1.2;">Heated Infusion Suites Built for Serenity</h2>
+                    <p style="margin-bottom: 1.5rem; color: var(--text-muted); font-size: 1.1rem; line-height: 1.7;">
+                        Chemotherapy treatment should never feel institutional. Our center features private and semi-private bays filled with warm sunlight, peaceful garden views, and medical amenities engineered for relaxation.
+                    </p>
+                    <ul class="text-muted" style="margin-bottom: 2rem;">
+                        <li style="margin-bottom: 10px;"><i class="fa-solid fa-check-circle"
+                                style="color: var(--primary);"></i> Heated memory foam recliners with massage capability</li>
+                        <li style="margin-bottom: 10px;"><i class="fa-solid fa-check-circle"
+                                style="color: var(--primary);"></i> Dignicap and Paxman scalp cooling systems to preserve hair</li>
+                        <li style="margin-bottom: 10px;"><i class="fa-solid fa-check-circle"
+                                style="color: var(--primary);"></i> HEPA-filtered clean air environment for immunocompromised care</li>
+                        <li style="margin-bottom: 10px;"><i class="fa-solid fa-check-circle"
+                                style="color: var(--primary);"></i> Oncology Certified Nurse (OCN) bedside accompaniment</li>
+                    </ul>
+                    <a href="services.html#chemo" class="btn btn-outline">Explore Infusion Amenities</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature Section: Precision Tracking -->
+    <section class="section sanctuary-section" style="padding: 90px 0;">
+        <div class="container">
+            <div class="sanctuary-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 60px; align-items: center;">
+                <div class="sanctuary-content">
+                    <span class="badge"
+                        style="background: rgba(13, 118, 133, 0.12); color: var(--primary); padding: 8px 15px; border-radius: 30px; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; display: inline-block;">
+                        PATIENT PORTAL
+                    </span>
+                    <h2 style="font-size: 2.8rem; line-height: 1.2; margin-bottom: 20px;">The Digital <span
+                            style="color: var(--primary);">Care Companion</span></h2>
+                    <p class="text-muted" style="font-size: 1.15rem; line-height: 1.7; margin-bottom: 30px;">
+                        Stay in control of your treatment schedule, review clinical notes, manage anti-nausea medications, and view upcoming appointments in our secure patient portal.
+                    </p>
+
+                    <ul style="margin-bottom: 40px;">
+                        <li style="margin-bottom: 20px; display: flex; align-items: flex-start; gap: 15px;">
+                            <i class="fa-solid fa-calendar-days"
+                                style="color: var(--primary); font-size: 1.5rem; margin-top: 5px;"></i>
+                            <div>
+                                <span style="font-weight: 700; display: block;">Treatment Cycle Tracking</span>
+                                <span class="text-muted">Real-time status of current cycle progress, infusion dates, and lab check intervals.</span>
+                            </div>
+                        </li>
+                        <li style="margin-bottom: 20px; display: flex; align-items: flex-start; gap: 15px;">
+                            <i class="fa-solid fa-pills"
+                                style="color: var(--secondary); font-size: 1.5rem; margin-top: 5px;"></i>
+                            <div>
+                                <span style="font-weight: 700; display: block;">Medication Reminders</span>
+                                <span class="text-muted">Timely daily alerts for supportive anti-emetics, prophylactic medicines, and hydration.</span>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <a href="dashboard.html" class="btn btn-primary">Open Patient Dashboard</a>
+                </div>
+
+                <div style="border-radius: var(--border-radius); overflow: hidden; box-shadow: var(--shadow-lg);">
+                    <img src="img/radiation_tech.jpg" alt="Precision Cancer Care" style="width: 100%; height: auto; object-fit: cover;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container text-center">
+            <div class="footer-grid">
+                <!-- Column 1 -->
+                <div class="footer-col" style="text-align: left;">
+                    <a href="index.html" class="logo" style="margin-bottom: 15px;">
+                        <i class="logo-icon"><i class="fa-solid fa-ribbon"></i></i> Oncura
+                    </a>
+                    <p class="text-muted" style="margin-bottom: 20px;">
+                        Specialized cancer care, modern chemotherapy infusion suites, radiation coordination, and lifelong survivorship support.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <!-- Column 2 -->
+                <div class="footer-col" style="text-align: left;">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">Our Team</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="blog.html">Patient Resources</a></li>
+                        <li><a href="contact.html">Contact & Helpline</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3 -->
+                <div class="footer-col" style="text-align: left;">
+                    <h4>Clinical Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html#chemo">Chemotherapy Infusion</a></li>
+                        <li><a href="services.html#radiation">Radiation Coordination</a></li>
+                        <li><a href="services.html#survivorship">Survivorship Support</a></li>
+                        <li><a href="services.html#immunotherapy">Precision Medicine</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4 -->
+                <div class="footer-col" style="text-align: left;">
+                    <h4>Urgent Care & Triage</h4>
+                    <ul class="footer-contact">
+                        <li><i class="fa-solid fa-phone"></i> 24/7 Helpline: (123) 456-7890</li>
+                        <li><i class="fa-solid fa-envelope"></i> care@oncologysupport-center.org</li>
+                        <li><i class="fa-solid fa-location-dot"></i> Hope & Healing Pavilion, 123 Healthcare Way</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Oncura Cancer Care Center. All Rights Reserved.</p>
+                <div style="display: flex; gap: 20px;">
+                    <a href="#">Patient Privacy & HIPAA</a>
+                    <a href="#">Terms of Care</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

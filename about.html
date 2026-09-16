@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team | Oncura Cancer Care Center</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="img/favicon.png">
+</head>
+
+<body>
+
+    <!-- Drawer Overlay -->
+    <div id="drawer-overlay" class="drawer-overlay"></div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-drawer" class="mobile-drawer">
+        <div class="drawer-header">
+            <a href="index.html" class="logo">
+                <i class="logo-icon"><i class="fa-solid fa-ribbon"></i></i> Oncura
+            </a>
+            <button type="button" id="drawer-close" class="toggle-btn drawer-close" aria-label="Close menu">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <a href="index.html" class="mobile-link">Home</a>
+        <a href="home2.html" class="mobile-link">Care</a>
+        <a href="about.html" class="mobile-link active">Team</a>
+        <a href="services.html" class="mobile-link">Services</a>
+        <a href="blog.html" class="mobile-link">Resources</a>
+        <a href="contact.html" class="mobile-link">Contact</a>
+        <a href="dashboard.html" class="mobile-link">Portal</a>
+    </div>
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <div id="hamburger" class="hamburger"><i class="fa-solid fa-bars"></i></div>
+            <a href="index.html" class="logo">
+                <i class="logo-icon"><i class="fa-solid fa-ribbon"></i></i> Oncura
+            </a>
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="home2.html" class="nav-link">Care</a>
+                <a href="about.html" class="nav-link active">Team</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="blog.html" class="nav-link">Resources</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="dashboard.html" class="nav-link">Portal</a>
+            </nav>
+            <div class="nav-actions">
+                <button id="rtl-toggle" class="toggle-btn"><i class="fa-solid fa-right-left"></i></button>
+                <button id="theme-toggle" class="toggle-btn">🌙</button>
+                <a href="login.html" class="btn btn-outline hide-mobile" style="padding: 10px 20px;">Portal Login</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Hero -->
+    <section class="services-hero about-hero" style="background: linear-gradient(135deg, rgba(13, 118, 133, 0.95), rgba(8, 80, 91, 0.95)); padding: 130px 0 80px;">
+        <div class="container text-center" style="color: white;">
+            <span class="service-content-badge" style="background: rgba(255, 255, 255, 0.2); color: white; display: inline-block; margin-bottom: 15px;">
+                OUR MULTIDISCIPLINARY CARE TEAM
+            </span>
+            <h1 style="font-size: 3.5rem; line-height: 1.1; margin-top: 15px; color: white;">
+                Guided by <span style="color: var(--secondary-light);">Compassion</span> & Clinical Mastery
+            </h1>
+            <p style="font-size: 1.3rem; max-width: 800px; margin: 25px auto 0; color: rgba(255, 255, 255, 0.9);">
+                Meet the board-certified medical oncologists, radiation coordinators, oncology nurse navigators, and counseling specialists dedicated to your healing.
+            </p>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="section" style="padding: 100px 0;">
+        <div class="container">
+            <div
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 60px; align-items: center;">
+                <div class="reveal-v2">
+                    <span class="service-content-badge" style="background: rgba(13, 118, 133, 0.12); color: var(--primary);">MISSION & ADVOCACY</span>
+                    <h2 style="font-size: 2.5rem; margin-bottom: 20px; line-height: 1.2;">Uniting Science with Heart</h2>
+                    <p class="text-muted" style="font-size: 1.15rem; margin-bottom: 25px; line-height: 1.7;">
+                        Oncura Cancer Care Center was founded on a simple promise: that every person diagnosed with cancer deserves individualized clinical rigor alongside unyielding empathy. We treat the whole person, not just the disease.
+                    </p>
+
+                    <div style="display: flex; flex-direction: column; gap: 20px;">
+                        <div style="display: flex; gap: 15px; align-items: flex-start;">
+                            <div
+                                style="width: 44px; height: 44px; background: var(--secondary); color: white; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1.1rem;">
+                                <i class="fa-solid fa-hands-holding-heart"></i>
+                            </div>
+                            <div>
+                                <h4 style="margin-bottom: 5px;">Nurse Navigator Advocacy</h4>
+                                <p class="text-muted">Every patient receives an assigned Oncology Certified Nurse (OCN) to coordinate tests, explain regimens, and answer urgent questions.</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 15px; align-items: flex-start;">
+                            <div
+                                style="width: 44px; height: 44px; background: var(--primary); color: white; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1.1rem;">
+                                <i class="fa-solid fa-microscope"></i>
+                            </div>
+                            <div>
+                                <h4 style="margin-bottom: 5px;">Collaborative Tumor Boards</h4>
+                                <p class="text-muted">Weekly case reviews with specialists in medical oncology, surgical oncology, pathology, and radiation planning ensure no stone is unturned.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="service-image-mask" style="height: 480px; border-radius: var(--border-radius); overflow: hidden; box-shadow: var(--shadow-lg);">
+                    <img src="img/oncology_hero.jpg" alt="Our Compassionate Oncology Team" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW SECTION: Meet Our Specialists -->
+    <section class="section" style="background-color: var(--bg-gray); padding: 90px 0;">
+        <div class="container text-center">
+            <div class="section-header">
+                <span class="service-content-badge" style="background: rgba(13, 118, 133, 0.12); color: var(--primary); margin-bottom: 12px; display: inline-block;">LEADERSHIP & EXPERTISE</span>
+                <h2>Meet Our Clinical Specialists</h2>
+                <p class="text-muted">Experienced oncologists and supportive care leaders fighting for you.</p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; text-align: left;">
+                
+                <!-- Doctor 1 -->
+                <div class="card" style="background: var(--bg-card); padding: 30px; border-radius: var(--border-radius); border: 1px solid var(--border-color); box-shadow: var(--shadow-md);">
+                    <div style="width: 70px; height: 70px; border-radius: 50%; background: rgba(13, 118, 133, 0.12); color: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin-bottom: 20px;">
+                        <i class="fa-solid fa-user-doctor"></i>
+                    </div>
+                    <h3 style="font-size: 1.3rem; margin-bottom: 5px;">Dr. Eleanor Vance, MD</h3>
+                    <div style="color: var(--primary); font-weight: 600; font-size: 0.95rem; margin-bottom: 15px;">Chief of Medical Oncology & Hematology</div>
+                    <p class="text-muted" style="font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">
+                        Specializing in targeted breast and thoracic oncology with over 18 years of clinical trial leadership and compassionate bedside care.
+                    </p>
+                    <div style="font-size: 0.85rem; color: var(--text-muted); border-top: 1px solid var(--border-color); padding-top: 12px;">
+                        <i class="fa-solid fa-award" style="color: var(--accent);"></i> Board Certified in Medical Oncology
+                    </div>
+                </div>
+
+                <!-- Doctor 2 -->
+                <div class="card" style="background: var(--bg-card); padding: 30px; border-radius: var(--border-radius); border: 1px solid var(--border-color); box-shadow: var(--shadow-md);">
+                    <div style="width: 70px; height: 70px; border-radius: 50%; background: rgba(225, 29, 72, 0.12); color: var(--secondary); display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin-bottom: 20px;">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <h3 style="font-size: 1.3rem; margin-bottom: 5px;">Dr. Marcus Reynolds, MD</h3>
+                    <div style="color: var(--secondary); font-weight: 600; font-size: 0.95rem; margin-bottom: 15px;">Radiation Oncology Coordinator</div>
+                    <p class="text-muted" style="font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">
+                        Pioneering precision stereotactic radiation coordination and seamless clinical workflows between regional radiotherapy suites and infusion teams.
+                    </p>
+                    <div style="font-size: 0.85rem; color: var(--text-muted); border-top: 1px solid var(--border-color); padding-top: 12px;">
+                        <i class="fa-solid fa-award" style="color: var(--accent);"></i> Fellow, American Society for Radiation Oncology
+                    </div>
+                </div>
+
+                <!-- Doctor 3 -->
+                <div class="card" style="background: var(--bg-card); padding: 30px; border-radius: var(--border-radius); border: 1px solid var(--border-color); box-shadow: var(--shadow-md);">
+                    <div style="width: 70px; height: 70px; border-radius: 50%; background: rgba(245, 158, 11, 0.15); color: var(--accent-dark); display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin-bottom: 20px;">
+                        <i class="fa-solid fa-user-nurse"></i>
+                    </div>
+                    <h3 style="font-size: 1.3rem; margin-bottom: 5px;">Sarah Lin, MSN, RN, OCN</h3>
+                    <div style="color: var(--accent-dark); font-weight: 600; font-size: 0.95rem; margin-bottom: 15px;">Lead Oncology Nurse Navigator</div>
+                    <p class="text-muted" style="font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">
+                        Dedicated to bridging clinical communication, preparing patients for chemotherapy infusion cycles, and troubleshooting urgent symptom concerns.
+                    </p>
+                    <div style="font-size: 0.85rem; color: var(--text-muted); border-top: 1px solid var(--border-color); padding-top: 12px;">
+                        <i class="fa-solid fa-award" style="color: var(--accent);"></i> Certified Oncology Nurse (OCN)
+                    </div>
+                </div>
+
+                <!-- Doctor 4 -->
+                <div class="card" style="background: var(--bg-card); padding: 30px; border-radius: var(--border-radius); border: 1px solid var(--border-color); box-shadow: var(--shadow-md);">
+                    <div style="width: 70px; height: 70px; border-radius: 50%; background: rgba(13, 118, 133, 0.12); color: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin-bottom: 20px;">
+                        <i class="fa-solid fa-heart-pulse"></i>
+                    </div>
+                    <h3 style="font-size: 1.3rem; margin-bottom: 5px;">Elena Gomez, LCSW, OSW-C</h3>
+                    <div style="color: var(--primary); font-weight: 600; font-size: 0.95rem; margin-bottom: 15px;">Director of Survivorship & Psycho-Oncology</div>
+                    <p class="text-muted" style="font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">
+                        Guiding cancer survivors, caregivers, and families with personalized mental health coping strategies, support groups, and life transition plans.
+                    </p>
+                    <div style="font-size: 0.85rem; color: var(--text-muted); border-top: 1px solid var(--border-color); padding-top: 12px;">
+                        <i class="fa-solid fa-award" style="color: var(--accent);"></i> Certified Oncology Social Worker
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW SECTION: Core Values -->
+    <section class="blog-categories-wrapper" style="padding: 90px 0;">
+        <div class="container text-center">
+            <div class="section-header">
+                <h2 style="font-size: 2.8rem;">Our Core <span style="color: var(--primary);">Care Values</span></h2>
+                <p>The principles that guide every patient relationship and treatment plan.</p>
+            </div>
+            <div class="category-row">
+                <div class="category-card-v3">
+                    <i class="fa-solid fa-hand-holding-heart"></i>
+                    <h3>Empathy</h3>
+                    <span>Listening with genuine care.</span>
+                </div>
+                <div class="category-card-v3">
+                    <i class="fa-solid fa-dna"></i>
+                    <h3>Precision</h3>
+                    <span>Targeting cancer biology accurately.</span>
+                </div>
+                <div class="category-card-v3">
+                    <i class="fa-solid fa-ribbon"></i>
+                    <h3>Hope</h3>
+                    <span>Fostering strength and resilience.</span>
+                </div>
+                <div class="category-card-v3">
+                    <i class="fa-solid fa-users"></i>
+                    <h3>Inclusion</h3>
+                    <span>Care equity for all backgrounds.</span>
+                </div>
+                <div class="category-card-v3">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <h3>Patient Dignity</h3>
+                    <span>Respecting autonomy at every step.</span>
+                </div>
+                <div class="category-card-v3">
+                    <i class="fa-solid fa-seedling"></i>
+                    <h3>Survivorship</h3>
+                    <span>Empowering long-term thriving.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container text-center">
+            <div class="footer-grid">
+                <!-- Column 1 -->
+                <div class="footer-col" style="text-align: left;">
+                    <a href="index.html" class="logo" style="margin-bottom: 15px;">
+                        <i class="logo-icon"><i class="fa-solid fa-ribbon"></i></i> Oncura
+                    </a>
+                    <p class="text-muted" style="margin-bottom: 20px;">
+                        Compassionate cancer care, advanced chemotherapy and precision radiation coordination, and dedicated survivorship support.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <!-- Column 2 -->
+                <div class="footer-col" style="text-align: left;">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">Our Team</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="blog.html">Patient Resources</a></li>
+                        <li><a href="contact.html">Contact & Helpline</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3 -->
+                <div class="footer-col" style="text-align: left;">
+                    <h4>Oncology Programs</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html#chemo">Chemotherapy Infusion</a></li>
+                        <li><a href="services.html#radiation">Radiation Coordination</a></li>
+                        <li><a href="services.html#survivorship">Survivorship Support</a></li>
+                        <li><a href="services.html#immunotherapy">Immunotherapy</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4 -->
+                <div class="footer-col" style="text-align: left;">
+                    <h4>Urgent Care & Triage</h4>
+                    <ul class="footer-contact">
+                        <li><i class="fa-solid fa-phone"></i> 24/7 Helpline: (123) 456-7890</li>
+                        <li><i class="fa-solid fa-envelope"></i> care@oncologysupport-center.org</li>
+                        <li><i class="fa-solid fa-location-dot"></i> Hope & Healing Pavilion, 123 Healthcare Way</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Oncura Cancer Care Center. All Rights Reserved.</p>
+                <div style="display: flex; gap: 20px;">
+                    <a href="#">Patient Privacy & HIPAA</a>
+                    <a href="#">Terms of Care</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

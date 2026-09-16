@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | Oncura Cancer Care Center</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="img/favicon.png">
+</head>
+
+<body>
+
+    <!-- Drawer Overlay -->
+    <div id="drawer-overlay" class="drawer-overlay"></div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-drawer" class="mobile-drawer">
+        <div class="drawer-header">
+            <a href="index.html" class="logo">
+                <i class="logo-icon"><i class="fa-solid fa-ribbon"></i></i> Oncura
+            </a>
+            <button type="button" id="drawer-close" class="toggle-btn drawer-close" aria-label="Close menu">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <a href="index.html" class="mobile-link">Home</a>
+        <a href="home2.html" class="mobile-link">Care</a>
+        <a href="about.html" class="mobile-link">Team</a>
+        <a href="services.html" class="mobile-link active">Services</a>
+        <a href="blog.html" class="mobile-link">Resources</a>
+        <a href="contact.html" class="mobile-link">Contact</a>
+        <a href="dashboard.html" class="mobile-link">Portal</a>
+    </div>
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <div id="hamburger" class="hamburger"><i class="fa-solid fa-bars"></i></div>
+            <a href="index.html" class="logo">
+                <i class="logo-icon"><i class="fa-solid fa-ribbon"></i></i> Oncura
+            </a>
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="home2.html" class="nav-link">Care</a>
+                <a href="about.html" class="nav-link">Team</a>
+                <a href="services.html" class="nav-link active">Services</a>
+                <a href="blog.html" class="nav-link">Resources</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="dashboard.html" class="nav-link">Portal</a>
+            </nav>
+            <div class="nav-actions">
+                <button id="rtl-toggle" class="toggle-btn" title="Switch Language Direction"><i
+                        class="fa-solid fa-right-left"></i></button>
+                <button id="theme-toggle" class="toggle-btn" title="Toggle theme">🌙</button>
+                <a href="login.html" class="btn btn-outline hide-mobile" style="padding: 10px 20px;">Portal Login</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Header Section -->
+    <section class="services-hero" style="background: linear-gradient(135deg, rgba(13, 118, 133, 0.95), rgba(8, 80, 91, 0.95)); padding: 120px 0 80px;">
+        <div class="container text-center" style="color: white;">
+            <span class="badge" style="background: rgba(255, 255, 255, 0.2); color: white; margin-bottom: 20px; display: inline-block;">
+                <i class="fa-solid fa-ribbon"></i> Multidisciplinary Oncology Services
+            </span>
+            <h1 style="color: white; font-size: 3rem; margin-bottom: 20px;">Comprehensive Cancer Care & Healing</h1>
+            <p style="color: rgba(255, 255, 255, 0.9); font-size: 1.25rem; max-width: 800px; margin: 0 auto;">
+                From advanced chemotherapy infusion and precision radiation coordination to lifelong survivorship support, our center stands with you every step of the way.
+            </p>
+        </div>
+    </section>
+
+    <!-- Services Detail -->
+    <section class="section" style="padding-top: 80px;">
+        <div class="container">
+            <div style="display: flex; flex-direction: column; gap: 60px;">
+
+                <!-- Service Item 1: Chemotherapy & Infusion -->
+                <div class="service-item-v2 reveal-v2" id="chemo"
+                    style="display: flex; flex-wrap: wrap; gap: 60px; align-items: center;">
+                    <div style="flex: 1; min-width: 320px;">
+                        <span class="service-content-badge" style="background: rgba(13, 118, 133, 0.12); color: var(--primary);">Clinical Excellence</span>
+                        <h2 style="font-size: 2.3rem; margin-bottom: 20px;">Chemotherapy & Targeted Infusions</h2>
+                        <p style="margin-bottom: 1.5rem; font-size: 1.15rem; color: var(--text-muted); line-height: 1.7;">
+                            Our light-filled chemotherapy infusion suites are thoughtfully designed to maximize your physical comfort and emotional calm. Equipped with heated ergonomic recliners, personal entertainment tablets, and panoramic garden views, each session is administered by Oncology Certified Nurses (OCN) with physician oversight.
+                        </p>
+                        <div class="feature-list-check">
+                            <div class="feature-check-item">
+                                <i class="fa-solid fa-circle-check" style="color: var(--primary);"></i>
+                                <span>Advanced cold cap scalp cooling therapy to reduce hair loss.</span>
+                            </div>
+                            <div class="feature-check-item">
+                                <i class="fa-solid fa-circle-check" style="color: var(--primary);"></i>
+                                <span>On-site oncology pharmacy ensuring precise, customized dosing.</span>
+                            </div>
+                            <div class="feature-check-item">
+                                <i class="fa-solid fa-circle-check" style="color: var(--primary);"></i>
+                                <span>Proactive anti-emetic protocols for nausea prevention and comfort.</span>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 15px; margin-top: 30px;">
+                            <a href="dashboard.html" class="btn btn-primary">Track Treatment Cycles</a>
+                            <a href="contact.html" class="btn btn-outline">Ask an Oncology Nurse</a>
+                        </div>
+                    </div>
+                    <div style="flex: 1; min-width: 320px;">
+                        <div class="service-image-mask" style="border-radius: var(--border-radius); overflow: hidden; box-shadow: var(--shadow-lg);">
+                            <img src="img/chemo_suite.jpg" alt="Chemotherapy Infusion Suite" style="width: 100%; height: auto; object-fit: cover;">
+                            <div class="service-tag-floating" style="background: var(--primary); color: white;">Comfort & Precision</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service Item 2: Radiation Coordination -->
+                <div class="service-item-v2 reveal-v2" id="radiation"
+                    style="display: flex; flex-wrap: wrap; flex-direction: row-reverse; gap: 60px; align-items: center;">
+                    <div style="flex: 1; min-width: 320px;">
+                        <span class="service-content-badge"
+                            style="background: rgba(225, 29, 72, 0.12); color: var(--secondary);">Advanced Technology</span>
+                        <h2 style="font-size: 2.3rem; margin-bottom: 20px;">Precision Radiation Coordination</h2>
+                        <p style="margin-bottom: 1.5rem; font-size: 1.15rem; color: var(--text-muted); line-height: 1.7;">
+                            We provide seamless coordination with premier regional radiation oncology facilities, ensuring flawless alignment between medical oncology and radiation therapies. Our radiation coordinators guide you through 4D CT simulations, treatment mapping, and daily session logistics with minimal disruption.
+                        </p>
+                        <div class="feature-list-check">
+                            <div class="feature-check-item">
+                                <i class="fa-solid fa-circle-check" style="color: var(--secondary);"></i>
+                                <span>Coordination for IMRT, SBRT (Stereotactic), and Proton Beam Therapy.</span>
+                            </div>
+                            <div class="feature-check-item">
+                                <i class="fa-solid fa-circle-check" style="color: var(--secondary);"></i>
+                                <span>Specialized skin barrier and fatigue prevention care plans.</span>
+                            </div>
+                            <div class="feature-check-item">
+                                <i class="fa-solid fa-circle-check" style="color: var(--secondary);"></i>
+                                <span>Direct tumor board review between medical and radiation oncologists.</span>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 15px; margin-top: 30px;">
+                            <a href="dashboard.html" class="btn btn-secondary">View Radiation Calendar</a>
+                            <a href="contact.html" class="btn btn-outline">Consultation Request</a>
+                        </div>
+                    </div>
+                    <div style="flex: 1; min-width: 320px;">
+                        <div class="service-image-mask" style="border-radius: var(--border-radius); overflow: hidden; box-shadow: var(--shadow-lg);">
+                            <img src="img/radiation_tech.jpg" alt="Radiation Oncology Coordination" style="width: 100%; height: auto; object-fit: cover;">
+                            <div class="service-tag-floating" style="background: var(--secondary); color: white;">Pinpoint Accuracy</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service Item 3: Survivorship Support -->
+                <div class="service-item-v2 reveal-v2" id="survivorship"
+                    style="display: flex; flex-wrap: wrap; gap: 60px; align-items: center;">
+                    <div style="flex: 1; min-width: 320px;">
+                        <span class="service-content-badge" style="background: rgba(245, 158, 11, 0.15); color: var(--accent-dark);">Lifelong Wellness</span>
+                        <h2 style="font-size: 2.3rem; margin-bottom: 20px;">Comprehensive Survivorship Support</h2>
+                        <p style="margin-bottom: 1.5rem; font-size: 1.15rem; color: var(--text-muted); line-height: 1.7;">
+                            Completing active treatment is a major milestone, yet the physical and emotional transition into survivorship brings unique needs. Our Survivorship Care Program provides personalized follow-up care plans, health surveillance schedules, and rehabilitative therapy to help you thrive beyond cancer.
+                        </p>
+                        <div class="feature-list-check">
+                            <div class="feature-check-item">
+                                <i class="fa-solid fa-circle-check" style="color: var(--accent-dark);"></i>
+                                <span>Personalized Survivorship Care Plan (SCP) with long-term surveillance guide.</span>
+                            </div>
+                            <div class="feature-check-item">
+                                <i class="fa-solid fa-circle-check" style="color: var(--accent-dark);"></i>
+                                <span>Certified lymphedema therapy and oncology physical rehabilitation.</span>
+                            </div>
+                            <div class="feature-check-item">
+                                <i class="fa-solid fa-circle-check" style="color: var(--accent-dark);"></i>
+                                <span>Cancer nutrition guidance, mental health counseling, and survivor circles.</span>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 15px; margin-top: 30px;">
+                            <a href="blog.html" class="btn btn-primary">Browse Survivor Resources</a>
+                            <a href="contact.html" class="btn btn-outline">Join Support Group</a>
+                        </div>
+                    </div>
+                    <div style="flex: 1; min-width: 320px;">
+                        <div class="service-image-mask" style="border-radius: var(--border-radius); overflow: hidden; box-shadow: var(--shadow-lg);">
+                            <img src="img/featured_story.png" alt="Survivorship Support" style="width: 100%; height: auto; object-fit: cover;">
+                            <div class="service-tag-floating" style="background: var(--accent-dark); color: white;">Thriving Beyond Cancer</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service Item 4: Immunotherapy & Precision Medicine -->
+                <div class="service-item-v2 reveal-v2" id="immunotherapy"
+                    style="display: flex; flex-wrap: wrap; flex-direction: row-reverse; gap: 60px; align-items: center;">
+                    <div style="flex: 1; min-width: 320px;">
+                        <span class="service-content-badge"
+                            style="background: rgba(13, 118, 133, 0.12); color: var(--primary);">Genomic Science</span>
+                        <h2 style="font-size: 2.3rem; margin-bottom: 20px;">Immunotherapy & Precision Oncology</h2>
+                        <p style="margin-bottom: 1.5rem; font-size: 1.15rem; color: var(--text-muted); line-height: 1.7;">
+                            By analyzing the molecular DNA and RNA blueprint of your tumor, we deploy state-of-the-art immunotherapies and targeted biologics that train your immune system to detect and eradicate cancer cells with minimal impact on healthy tissues.
+                        </p>
+                        <div class="feature-list-check">
+                            <div class="feature-check-item">
+                                <i class="fa-solid fa-circle-check" style="color: var(--primary);"></i>
+                                <span>Next-generation DNA sequencing and comprehensive biomarker testing.</span>
+                            </div>
+                            <div class="feature-check-item">
+                                <i class="fa-solid fa-circle-check" style="color: var(--primary);"></i>
+                                <span>PD-1/PD-L1 checkpoint inhibitors, monoclonal antibodies, and kinase inhibitors.</span>
+                            </div>
+                            <div class="feature-check-item">
+                                <i class="fa-solid fa-circle-check" style="color: var(--primary);"></i>
+                                <span>Coordination with premier clinical trials and expanded access programs.</span>
+                            </div>
+                        </div>
+                        <a href="contact.html" class="btn btn-primary" style="margin-top: 30px;">Request Genomic Review</a>
+                    </div>
+                    <div style="flex: 1; min-width: 320px;">
+                        <div class="service-image-mask" style="border-radius: var(--border-radius); overflow: hidden; box-shadow: var(--shadow-lg);">
+                            <img src="img/appointment_service.png" alt="Immunotherapy and Molecular Oncology" style="width: 100%; height: auto; object-fit: cover;">
+                            <div class="service-tag-floating" style="background: var(--primary); color: white;">Targeted Medicine</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service Item 5: Integrative Palliative & Supportive Oncology -->
+                <div class="service-item-v2 reveal-v2" id="palliative"
+                    style="display: flex; flex-wrap: wrap; gap: 60px; align-items: center;">
+                    <div style="flex: 1; min-width: 320px;">
+                        <span class="service-content-badge" style="background: rgba(225, 29, 72, 0.12); color: var(--secondary);">Whole-Person Care</span>
+                        <h2 style="font-size: 2.3rem; margin-bottom: 20px;">Integrative Palliative & Supportive Care</h2>
+                        <p style="margin-bottom: 1.5rem; font-size: 1.15rem; color: var(--text-muted); line-height: 1.7;">
+                            Palliative oncology focuses on relieving symptoms, pain, and stress at any stage of illness alongside curative therapies. Our multidisciplinary care team addresses neuropathy, sleep disruption, anxiety, and fatigue through both medical management and holistic evidence-based modalities.
+                        </p>
+                        <div class="feature-list-check">
+                            <div class="feature-check-item">
+                                <i class="fa-solid fa-circle-check" style="color: var(--secondary);"></i>
+                                <span>Specialized cancer pain management and symptom relief regimens.</span>
+                            </div>
+                            <div class="feature-check-item">
+                                <i class="fa-solid fa-circle-check" style="color: var(--secondary);"></i>
+                                <span>Clinical oncology dietitian consultations and appetite support.</span>
+                            </div>
+                            <div class="feature-check-item">
+                                <i class="fa-solid fa-circle-check" style="color: var(--secondary);"></i>
+                                <span>Licensed psycho-oncology counseling for patients, spouses, and children.</span>
+                            </div>
+                        </div>
+                        <a href="dashboard.html" class="btn btn-secondary" style="margin-top: 30px;">Access Care Team Notes</a>
+                    </div>
+                    <div style="flex: 1; min-width: 320px;">
+                        <div class="service-image-mask" style="border-radius: var(--border-radius); overflow: hidden; box-shadow: var(--shadow-lg);">
+                            <img src="img/senior_service.png" alt="Integrative Supportive Care" style="width: 100%; height: auto; object-fit: cover;">
+                            <div class="service-tag-floating" style="background: var(--secondary); color: white;">Comfort & Empathy</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container text-center">
+            <div class="footer-grid">
+                <!-- Column 1 -->
+                <div class="footer-col" style="text-align: left;">
+                    <a href="index.html" class="logo" style="margin-bottom: 15px;">
+                        <i class="logo-icon"><i class="fa-solid fa-ribbon"></i></i> Oncura
+                    </a></div>
+                    <p class="text-muted" style="margin-bottom: 20px;">
+                        Comprehensive cancer care, chemotherapy infusion suites, precision radiation coordination, and dedicated survivorship support.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <!-- Column 2 -->
+                <div class="footer-col" style="text-align: left;">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">Our Team</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="blog.html">Patient Resources</a></li>
+                        <li><a href="contact.html">Contact & Helpline</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3 -->
+                <div class="footer-col" style="text-align: left;">
+                    <h4>Oncology Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="#chemo">Chemotherapy Infusion</a></li>
+                        <li><a href="#radiation">Radiation Coordination</a></li>
+                        <li><a href="#survivorship">Survivorship Support</a></li>
+                        <li><a href="#immunotherapy">Immunotherapy & Trials</a></li>
+                        <li><a href="#palliative">Supportive Oncology</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4 -->
+                <div class="footer-col" style="text-align: left;">
+                    <h4>Urgent Patient Care</h4>
+                    <ul class="footer-contact">
+                        <li><i class="fa-solid fa-phone"></i> 24/7 Helpline: (123) 456-7890</li>
+                        <li><i class="fa-solid fa-envelope"></i> care@oncologysupport-center.org</li>
+                        <li><i class="fa-solid fa-location-dot"></i> Hope & Healing Pavilion, 123 Healthcare Way</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Oncura Cancer Care Center. All Rights Reserved.</p>
+                <div style="display: flex; gap: 20px;">
+                    <a href="#">Patient Privacy & HIPAA</a>
+                    <a href="#">Terms of Care</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
