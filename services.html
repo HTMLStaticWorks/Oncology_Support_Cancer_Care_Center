@@ -15,7 +15,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
     <link rel="icon" type="image/png" href="img/favicon.png">
+    <link rel="apple-touch-icon" href="img/favicon.png">
 </head>
 
 <body>
@@ -40,6 +42,15 @@
         <a href="blog.html" class="mobile-link">Resources</a>
         <a href="contact.html" class="mobile-link">Contact</a>
         <a href="dashboard.html" class="mobile-link">Portal</a>
+        <div class="drawer-portal-login-wrapper">
+            <a href="login.html" class="btn btn-outline drawer-portal-btn">Portal Login</a>
+        </div>
+        <div class="drawer-actions">
+            <button type="button" id="mobile-rtl-toggle" class="toggle-btn" title="Switch Language Direction" aria-label="Switch Language Direction">
+                <i class="fa-solid fa-right-left"></i>
+            </button>
+            <button type="button" id="mobile-theme-toggle" class="toggle-btn" title="Toggle theme" aria-label="Toggle theme">🌙</button>
+        </div>
     </div>
 
     <!-- Navigation -->
@@ -73,7 +84,7 @@
             <span class="badge" style="background: rgba(255, 255, 255, 0.2); color: white; margin-bottom: 20px; display: inline-block;">
                 <i class="fa-solid fa-ribbon"></i> Multidisciplinary Oncology Services
             </span>
-            <h1 style="color: white; font-size: 3rem; margin-bottom: 20px;">Comprehensive Cancer Care & Healing</h1>
+            <h1 class="inner-hero-title">Comprehensive Cancer Care & Healing</h1>
             <p style="color: rgba(255, 255, 255, 0.9); font-size: 1.25rem; max-width: 800px; margin: 0 auto;">
                 From advanced chemotherapy infusion and precision radiation coordination to lifelong survivorship support, our center stands with you every step of the way.
             </p>
@@ -86,9 +97,8 @@
             <div style="display: flex; flex-direction: column; gap: 60px;">
 
                 <!-- Service Item 1: Chemotherapy & Infusion -->
-                <div class="service-item-v2 reveal-v2" id="chemo"
-                    style="display: flex; flex-wrap: wrap; gap: 60px; align-items: center;">
-                    <div style="flex: 1; min-width: 320px;">
+                <div class="service-item-v2 reveal-v2" id="chemo">
+                    <div class="service-content-col">
                         <span class="service-content-badge" style="background: rgba(13, 118, 133, 0.12); color: var(--primary);">Clinical Excellence</span>
                         <h2 style="font-size: 2.3rem; margin-bottom: 20px;">Chemotherapy & Targeted Infusions</h2>
                         <p style="margin-bottom: 1.5rem; font-size: 1.15rem; color: var(--text-muted); line-height: 1.7;">
@@ -108,23 +118,22 @@
                                 <span>Proactive anti-emetic protocols for nausea prevention and comfort.</span>
                             </div>
                         </div>
-                        <div style="display: flex; gap: 15px; margin-top: 30px;">
+                        <div class="service-action-buttons">
                             <a href="dashboard.html" class="btn btn-primary">Track Treatment Cycles</a>
                             <a href="contact.html" class="btn btn-outline">Ask an Oncology Nurse</a>
                         </div>
                     </div>
-                    <div style="flex: 1; min-width: 320px;">
-                        <div class="service-image-mask" style="border-radius: var(--border-radius); overflow: hidden; box-shadow: var(--shadow-lg);">
-                            <img src="img/chemo_suite.jpg" alt="Chemotherapy Infusion Suite" style="width: 100%; height: auto; object-fit: cover;">
+                    <div class="service-image-col">
+                        <div class="service-image-mask">
+                            <img src="img/chemo_suite.jpg" alt="Chemotherapy Infusion Suite">
                             <div class="service-tag-floating" style="background: var(--primary); color: white;">Comfort & Precision</div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Service Item 2: Radiation Coordination -->
-                <div class="service-item-v2 reveal-v2" id="radiation"
-                    style="display: flex; flex-wrap: wrap; flex-direction: row-reverse; gap: 60px; align-items: center;">
-                    <div style="flex: 1; min-width: 320px;">
+                <div class="service-item-v2 reveal-v2" id="radiation">
+                    <div class="service-content-col">
                         <span class="service-content-badge"
                             style="background: rgba(225, 29, 72, 0.12); color: var(--secondary);">Advanced Technology</span>
                         <h2 style="font-size: 2.3rem; margin-bottom: 20px;">Precision Radiation Coordination</h2>
@@ -145,23 +154,22 @@
                                 <span>Direct tumor board review between medical and radiation oncologists.</span>
                             </div>
                         </div>
-                        <div style="display: flex; gap: 15px; margin-top: 30px;">
+                        <div class="service-action-buttons">
                             <a href="dashboard.html" class="btn btn-secondary">View Radiation Calendar</a>
                             <a href="contact.html" class="btn btn-outline">Consultation Request</a>
                         </div>
                     </div>
-                    <div style="flex: 1; min-width: 320px;">
-                        <div class="service-image-mask" style="border-radius: var(--border-radius); overflow: hidden; box-shadow: var(--shadow-lg);">
-                            <img src="img/radiation_tech.jpg" alt="Radiation Oncology Coordination" style="width: 100%; height: auto; object-fit: cover;">
+                    <div class="service-image-col">
+                        <div class="service-image-mask">
+                            <img src="img/radiation_tech.jpg" alt="Radiation Oncology Coordination">
                             <div class="service-tag-floating" style="background: var(--secondary); color: white;">Pinpoint Accuracy</div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Service Item 3: Survivorship Support -->
-                <div class="service-item-v2 reveal-v2" id="survivorship"
-                    style="display: flex; flex-wrap: wrap; gap: 60px; align-items: center;">
-                    <div style="flex: 1; min-width: 320px;">
+                <div class="service-item-v2 reveal-v2" id="survivorship">
+                    <div class="service-content-col">
                         <span class="service-content-badge" style="background: rgba(245, 158, 11, 0.15); color: var(--accent-dark);">Lifelong Wellness</span>
                         <h2 style="font-size: 2.3rem; margin-bottom: 20px;">Comprehensive Survivorship Support</h2>
                         <p style="margin-bottom: 1.5rem; font-size: 1.15rem; color: var(--text-muted); line-height: 1.7;">
@@ -181,23 +189,22 @@
                                 <span>Cancer nutrition guidance, mental health counseling, and survivor circles.</span>
                             </div>
                         </div>
-                        <div style="display: flex; gap: 15px; margin-top: 30px;">
+                        <div class="service-action-buttons">
                             <a href="blog.html" class="btn btn-primary">Browse Survivor Resources</a>
                             <a href="contact.html" class="btn btn-outline">Join Support Group</a>
                         </div>
                     </div>
-                    <div style="flex: 1; min-width: 320px;">
-                        <div class="service-image-mask" style="border-radius: var(--border-radius); overflow: hidden; box-shadow: var(--shadow-lg);">
-                            <img src="img/featured_story.png" alt="Survivorship Support" style="width: 100%; height: auto; object-fit: cover;">
+                    <div class="service-image-col">
+                        <div class="service-image-mask">
+                            <img src="img/featured_story.png" alt="Survivorship Support">
                             <div class="service-tag-floating" style="background: var(--accent-dark); color: white;">Thriving Beyond Cancer</div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Service Item 4: Immunotherapy & Precision Medicine -->
-                <div class="service-item-v2 reveal-v2" id="immunotherapy"
-                    style="display: flex; flex-wrap: wrap; flex-direction: row-reverse; gap: 60px; align-items: center;">
-                    <div style="flex: 1; min-width: 320px;">
+                <div class="service-item-v2 reveal-v2" id="immunotherapy">
+                    <div class="service-content-col">
                         <span class="service-content-badge"
                             style="background: rgba(13, 118, 133, 0.12); color: var(--primary);">Genomic Science</span>
                         <h2 style="font-size: 2.3rem; margin-bottom: 20px;">Immunotherapy & Precision Oncology</h2>
@@ -220,18 +227,17 @@
                         </div>
                         <a href="contact.html" class="btn btn-primary" style="margin-top: 30px;">Request Genomic Review</a>
                     </div>
-                    <div style="flex: 1; min-width: 320px;">
-                        <div class="service-image-mask" style="border-radius: var(--border-radius); overflow: hidden; box-shadow: var(--shadow-lg);">
-                            <img src="img/appointment_service.png" alt="Immunotherapy and Molecular Oncology" style="width: 100%; height: auto; object-fit: cover;">
+                    <div class="service-image-col">
+                        <div class="service-image-mask">
+                            <img src="img/appointment_service.png" alt="Immunotherapy and Molecular Oncology">
                             <div class="service-tag-floating" style="background: var(--primary); color: white;">Targeted Medicine</div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Service Item 5: Integrative Palliative & Supportive Oncology -->
-                <div class="service-item-v2 reveal-v2" id="palliative"
-                    style="display: flex; flex-wrap: wrap; gap: 60px; align-items: center;">
-                    <div style="flex: 1; min-width: 320px;">
+                <div class="service-item-v2 reveal-v2" id="palliative">
+                    <div class="service-content-col">
                         <span class="service-content-badge" style="background: rgba(225, 29, 72, 0.12); color: var(--secondary);">Whole-Person Care</span>
                         <h2 style="font-size: 2.3rem; margin-bottom: 20px;">Integrative Palliative & Supportive Care</h2>
                         <p style="margin-bottom: 1.5rem; font-size: 1.15rem; color: var(--text-muted); line-height: 1.7;">
@@ -253,9 +259,9 @@
                         </div>
                         <a href="dashboard.html" class="btn btn-secondary" style="margin-top: 30px;">Access Care Team Notes</a>
                     </div>
-                    <div style="flex: 1; min-width: 320px;">
-                        <div class="service-image-mask" style="border-radius: var(--border-radius); overflow: hidden; box-shadow: var(--shadow-lg);">
-                            <img src="img/senior_service.png" alt="Integrative Supportive Care" style="width: 100%; height: auto; object-fit: cover;">
+                    <div class="service-image-col">
+                        <div class="service-image-mask">
+                            <img src="img/senior_service.png" alt="Integrative Supportive Care">
                             <div class="service-tag-floating" style="background: var(--secondary); color: white;">Comfort & Empathy</div>
                         </div>
                     </div>
@@ -273,13 +279,13 @@
                 <div class="footer-col" style="text-align: left;">
                     <a href="index.html" class="logo" style="margin-bottom: 15px;">
                         <i class="logo-icon"><i class="fa-solid fa-ribbon"></i></i> Oncura
-                    </a></div>
+                    </a>
                     <p class="text-muted" style="margin-bottom: 20px;">
                         Comprehensive cancer care, chemotherapy infusion suites, precision radiation coordination, and dedicated survivorship support.
                     </p>
                     <div class="footer-social">
                         <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
                         <a href="#"><i class="fa-brands fa-linkedin"></i></a>
                         <a href="#"><i class="fa-brands fa-instagram"></i></a>
                     </div>

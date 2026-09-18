@@ -15,7 +15,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
     <link rel="icon" type="image/png" href="img/favicon.png">
+    <link rel="apple-touch-icon" href="img/favicon.png">
     <link rel="stylesheet" href="css/dashboard.css">
     <style>
         .cycle-progress-container {
@@ -24,6 +26,34 @@
             border-radius: var(--border-radius);
             padding: 25px;
             margin-bottom: 30px;
+            overflow: hidden;
+        }
+        .cycle-progress-slider {
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: thin;
+            scrollbar-color: var(--primary) var(--bg-gray);
+            padding-bottom: 6px;
+        }
+        .cycle-progress-slider::-webkit-scrollbar {
+            height: 6px;
+        }
+        .cycle-progress-slider::-webkit-scrollbar-track {
+            background: var(--bg-gray);
+            border-radius: 4px;
+        }
+        .cycle-progress-slider::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 4px;
+        }
+        @media (max-width: 768px) {
+            .cycle-progress-container {
+                padding: 20px 16px;
+            }
+            .cycle-progress-inner {
+                min-width: 580px;
+            }
         }
         .progress-bar-track {
             width: 100%;
@@ -56,6 +86,38 @@
             opacity: 0.75;
             background: rgba(13, 118, 133, 0.05);
             border-color: rgba(13, 118, 133, 0.3);
+        }
+        @media (max-width: 768px) {
+            .overview-section-header {
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: flex-start !important;
+                gap: 14px !important;
+            }
+            .overview-section-header .btn {
+                width: 100% !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                text-align: center !important;
+            }
+            .med-item {
+                flex-direction: column !important;
+                align-items: flex-start !important;
+                gap: 12px !important;
+            }
+            .med-item .btn,
+            .med-item .badge {
+                align-self: flex-start !important;
+            }
+            .med-item #quickAddWater,
+            .hydration-item .btn {
+                width: 100% !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                text-align: center !important;
+            }
         }
         .note-card {
             background: var(--bg-card);
@@ -227,8 +289,8 @@
                 </div>
 
                 <!-- Active Medications Today Summary -->
-                <div style="background: var(--bg-card); padding: 30px; border-radius: var(--border-radius); border: 1px solid var(--border-color); margin-bottom: 30px;">
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <div class="overview-meds-card" style="background: var(--bg-card); padding: 30px; border-radius: var(--border-radius); border: 1px solid var(--border-color); margin-bottom: 30px;">
+                    <div class="overview-section-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
                         <div>
                             <h2 style="font-size: 1.25rem;">Today's Supportive Medications</h2>
                             <p class="text-muted" style="font-size: 0.9rem;">Proactive side effect prevention schedule.</p>
@@ -260,7 +322,7 @@
                         <span class="badge" style="background: rgba(13, 118, 133, 0.15); color: var(--primary); font-size: 0.8rem;">Taken</span>
                     </div>
 
-                    <div class="med-item" style="border-left: 4px solid var(--accent);">
+                    <div class="med-item hydration-item" style="border-left: 4px solid var(--accent);">
                         <div style="display: flex; align-items: center; gap: 15px;">
                             <i class="fa-solid fa-bottle-water" style="color: var(--accent); font-size: 1.3rem;"></i>
                             <div>
@@ -309,22 +371,26 @@
 
                 <!-- Progress Tracker -->
                 <div class="cycle-progress-container">
-                    <div style="display: flex; justify-content: space-between; align-items: center;">
-                        <span style="font-weight: 700; color: var(--primary); font-size: 1.1rem;">
-                            Current Status: Cycle 3 Completed • Entering Pre-Cycle 4
-                        </span>
-                        <span style="font-weight: 800; color: var(--secondary);">3 of 6 Cycles (50% Complete)</span>
-                    </div>
-                    <div class="progress-bar-track">
-                        <div class="progress-bar-fill"></div>
-                    </div>
-                    <div style="display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--text-muted);">
-                        <span>Cycle 1 (Feb 14)</span>
-                        <span>Cycle 2 (Feb 28)</span>
-                        <span>Cycle 3 (Mar 14)</span>
-                        <span style="font-weight: 700; color: var(--secondary);">Cycle 4 (Mar 28)</span>
-                        <span>Cycle 5 (Apr 11)</span>
-                        <span>Cycle 6 (Apr 25)</span>
+                    <div class="cycle-progress-slider">
+                        <div class="cycle-progress-inner">
+                            <div style="display: flex; justify-content: space-between; align-items: center; gap: 15px;">
+                                <span style="font-weight: 700; color: var(--primary); font-size: 1.1rem; white-space: nowrap;">
+                                    Current Status: Cycle 3 Completed • Entering Pre-Cycle 4
+                                </span>
+                                <span style="font-weight: 800; color: var(--secondary); white-space: nowrap;">3 of 6 Cycles (50% Complete)</span>
+                            </div>
+                            <div class="progress-bar-track">
+                                <div class="progress-bar-fill"></div>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--text-muted); gap: 10px;">
+                                <span style="white-space: nowrap;">Cycle 1 (Feb 14)</span>
+                                <span style="white-space: nowrap;">Cycle 2 (Feb 28)</span>
+                                <span style="white-space: nowrap;">Cycle 3 (Mar 14)</span>
+                                <span style="font-weight: 700; color: var(--secondary); white-space: nowrap;">Cycle 4 (Mar 28)</span>
+                                <span style="white-space: nowrap;">Cycle 5 (Apr 11)</span>
+                                <span style="white-space: nowrap;">Cycle 6 (Apr 25)</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -418,9 +484,9 @@
                     <p style="font-size: 0.95rem; line-height: 1.7; margin-bottom: 15px; color: var(--text-main);">
                         "Patient was evaluated in clinic following completion of Cycle 3. Physical exam unremarkable with excellent surgical site healing. Vital signs: BP 118/74, HR 72, Temp 98.4°F. Reported mild grade 1 fatigue around days 2-3 post-infusion which resolved with hydration. Complete blood counts demonstrate absolute neutrophil count (ANC) of 2,100/µL and platelets of 185,000/µL. Patient is cleared to proceed with Cycle 4 as scheduled on March 28 with continuation of standard anti-emetics."
                     </p>
-                    <div style="display: flex; gap: 10px;">
-                        <button class="btn btn-outline" style="padding: 6px 14px; font-size: 0.8rem;" onclick="alert('Note #VNC-302 downloaded.')"><i class="fa-solid fa-file-pdf"></i> Download Note</button>
-                        <button class="btn btn-outline" style="padding: 6px 14px; font-size: 0.8rem;" onclick="alert('Message sent to Dr. Vance\'s clinical coordinator.')"><i class="fa-solid fa-envelope"></i> Message Clinician</button>
+                    <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                        <button class="btn btn-outline" style="padding: 6px 14px; font-size: 0.8rem; display: inline-flex; align-items: center; gap: 6px;" onclick="alert('Note #VNC-302 downloaded.')"><i class="fa-solid fa-file-pdf"></i> Download Note</button>
+                        <button class="btn btn-outline" style="padding: 6px 14px; font-size: 0.8rem; display: inline-flex; align-items: center; gap: 6px;" onclick="alert('Message sent to Dr. Vance\'s clinical coordinator.')"><i class="fa-solid fa-envelope"></i> Message Clinician</button>
                     </div>
                 </div>
 
@@ -436,8 +502,8 @@
                     <p style="font-size: 0.95rem; line-height: 1.7; margin-bottom: 15px; color: var(--text-main);">
                         "Reviewed patient's 4D CT simulation planning scans. Dosimetry contours finalized for 20-fraction adjuvant Intensity-Modulated Radiation Therapy (IMRT). Radiotherapy will commence approximately 3 weeks following completion of final chemotherapy cycle (approx. mid-May 2026). Skin barrier and radioprotective cream prescription provided. Patient counseled on hydration and rest during treatment phase."
                     </p>
-                    <div style="display: flex; gap: 10px;">
-                        <button class="btn btn-outline" style="padding: 6px 14px; font-size: 0.8rem;" onclick="alert('Note #RAD-114 downloaded.')"><i class="fa-solid fa-file-pdf"></i> Download Note</button>
+                    <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                        <button class="btn btn-outline" style="padding: 6px 14px; font-size: 0.8rem; display: inline-flex; align-items: center; gap: 6px;" onclick="alert('Note #RAD-114 downloaded.')"><i class="fa-solid fa-file-pdf"></i> Download Note</button>
                     </div>
                 </div>
 
@@ -453,8 +519,8 @@
                     <p style="font-size: 0.95rem; line-height: 1.7; margin-bottom: 15px; color: var(--text-main);">
                         "Conducted telephone check-in with patient and spouse. Scalp cooling cap fit was verified during Cycle 3 with no headache or scalp discomfort. Encouraged gentle hair brushing and mild pH-neutral shampoos. Reviewed temperature logging protocol: patient instructed to call the 24/7 triage line immediately if temperature reaches 100.4°F or higher."
                     </p>
-                    <div style="display: flex; gap: 10px;">
-                        <button class="btn btn-outline" style="padding: 6px 14px; font-size: 0.8rem;" onclick="alert('Navigator note #NAV-882 downloaded.')"><i class="fa-solid fa-file-pdf"></i> Download Note</button>
+                    <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                        <button class="btn btn-outline" style="padding: 6px 14px; font-size: 0.8rem; display: inline-flex; align-items: center; gap: 6px;" onclick="alert('Navigator note #NAV-882 downloaded.')"><i class="fa-solid fa-file-pdf"></i> Download Note</button>
                     </div>
                 </div>
             </div>
@@ -538,43 +604,43 @@
                         <h2>Medication Reminders & Adherence</h2>
                         <p class="text-muted">Track anti-nausea regimens, corticosteroids, and hydration targets.</p>
                     </div>
-                    <button class="btn btn-outline" onclick="alert('Message sent to Oncology Pharmacy Desk.')">
-                        <i class="fa-solid fa-prescription-bottle-medical" style="margin-right: 6px;"></i> Pharmacy Question
+                    <button class="btn btn-outline" style="display: inline-flex; align-items: center; gap: 6px;" onclick="alert('Message sent to Oncology Pharmacy Desk.')">
+                        <i class="fa-solid fa-prescription-bottle-medical"></i> Pharmacy Question
                     </button>
                 </div>
 
                 <div class="dash-form">
                     <h3 style="margin-bottom: 20px; font-size: 1.25rem;">Daily Supportive Regimen</h3>
                     
-                    <div class="med-item" id="med-1" style="display: flex; justify-content: space-between; align-items: center;">
+                    <div class="med-item" id="med-1" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
                         <div>
                             <div style="font-weight: 700; font-size: 1.05rem;">Ondansetron (Zofran) 8mg</div>
                             <div class="text-muted" style="font-size: 0.85rem;">1 tablet twice daily (8:00 AM & 8:00 PM) • Primary Nausea Prevention</div>
                             <div style="font-size: 0.8rem; color: var(--primary); margin-top: 4px;"><i class="fa-solid fa-clock"></i> Next Dose: Tonight at 8:00 PM</div>
                         </div>
-                        <button class="btn btn-primary toggle-med" data-med="1" style="padding: 8px 18px; font-size: 0.85rem;">
+                        <button class="btn btn-primary toggle-med" data-med="1" style="padding: 8px 18px; font-size: 0.85rem; display: inline-flex; align-items: center; gap: 6px;">
                             <i class="fa-solid fa-check"></i> Mark Taken
                         </button>
                     </div>
 
-                    <div class="med-item" id="med-2" style="display: flex; justify-content: space-between; align-items: center;">
+                    <div class="med-item" id="med-2" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
                         <div>
                             <div style="font-weight: 700; font-size: 1.05rem;">Dexamethasone 4mg</div>
                             <div class="text-muted" style="font-size: 0.85rem;">1 tablet daily in the morning with meal • Anti-inflammatory</div>
                             <div style="font-size: 0.8rem; color: var(--primary); margin-top: 4px;"><i class="fa-solid fa-check-double"></i> Morning dose logged at 8:15 AM</div>
                         </div>
-                        <button class="btn btn-outline toggle-med" data-med="2" style="padding: 8px 18px; font-size: 0.85rem;">
+                        <button class="btn btn-outline toggle-med" data-med="2" style="padding: 8px 18px; font-size: 0.85rem; display: inline-flex; align-items: center; gap: 6px;">
                             <i class="fa-solid fa-check"></i> Taken Today
                         </button>
                     </div>
 
-                    <div class="med-item" id="med-3" style="display: flex; justify-content: space-between; align-items: center;">
+                    <div class="med-item" id="med-3" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
                         <div>
                             <div style="font-weight: 700; font-size: 1.05rem;">Prochlorperazine (Compazine) 10mg</div>
                             <div class="text-muted" style="font-size: 0.85rem;">Every 6 hours as needed for breakthrough nausea</div>
                             <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 4px;"><i class="fa-solid fa-shield"></i> PRN (As Needed) • 0 doses needed today</div>
                         </div>
-                        <button class="btn btn-secondary" onclick="alert('Dose of Compazine 10mg logged in medication diary.')" style="padding: 8px 18px; font-size: 0.85rem;">
+                        <button class="btn btn-secondary" onclick="alert('Dose of Compazine 10mg logged in medication diary.')" style="padding: 8px 18px; font-size: 0.85rem; display: inline-flex; align-items: center; gap: 6px;">
                             <i class="fa-solid fa-plus"></i> Log PRN Dose
                         </button>
                     </div>
@@ -588,11 +654,11 @@
                         <div class="progress-bar-track" style="height: 10px;">
                             <div id="hydration-bar" class="progress-bar-fill" style="width: 72%; background: var(--primary);"></div>
                         </div>
-                        <div style="display: flex; gap: 10px; margin-top: 15px;">
-                            <button class="btn btn-primary" id="addWaterBtn" style="padding: 8px 16px; font-size: 0.85rem;">
+                        <div style="display: flex; gap: 10px; margin-top: 15px; flex-wrap: wrap;">
+                            <button class="btn btn-primary" id="addWaterBtn" style="padding: 8px 16px; font-size: 0.85rem; display: inline-flex; align-items: center; gap: 6px;">
                                 <i class="fa-solid fa-glass-water"></i> Log +250ml Water
                             </button>
-                            <button class="btn btn-outline" onclick="alert('Hydration reminder alerts set for every 2 hours.')" style="padding: 8px 16px; font-size: 0.85rem;">
+                            <button class="btn btn-outline" onclick="alert('Hydration reminder alerts set for every 2 hours.')" style="padding: 8px 16px; font-size: 0.85rem; display: inline-flex; align-items: center; gap: 6px;">
                                 <i class="fa-solid fa-bell"></i> Set Hydration Alarm
                             </button>
                         </div>
@@ -752,7 +818,9 @@
             <a href="#" class="menu-item" data-tab="medications"><i class="fa-solid fa-pills"></i> <span>Medication Reminders</span></a>
             <a href="#" class="menu-item" data-tab="billing"><i class="fa-solid fa-file-invoice-dollar"></i> <span>Billing & Insurance</span></a>
             <a href="#" class="menu-item" data-tab="profile"><i class="fa-solid fa-id-card"></i> <span>Patient Profile</span></a>
-            <a href="index.html" class="menu-item" data-tab="logout"><i class="fa-solid fa-sign-out-alt"></i> <span>Exit Portal</span></a>
+        </div>
+        <div class="dash-menu-footer">
+            <a href="index.html" class="menu-item dash-exit-item" data-tab="logout"><i class="fa-solid fa-arrow-right-from-bracket"></i> <span>Exit Portal</span></a>
         </div>
     </nav>
 

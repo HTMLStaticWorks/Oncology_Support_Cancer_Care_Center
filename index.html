@@ -15,7 +15,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
     <link rel="icon" type="image/png" href="img/favicon.png">
+    <link rel="apple-touch-icon" href="img/favicon.png">
     <style>
         @media (min-width: 1024px) {
             #home1-services .card-grid {
@@ -85,11 +87,14 @@
         <a href="blog.html" class="mobile-link">Resources</a>
         <a href="contact.html" class="mobile-link">Contact</a>
         <a href="dashboard.html" class="mobile-link">Portal</a>
-        <div class="drawer-item mobile-theme-toggle" id="mobile-theme-toggle">
-            <span>🌙</span> Theme
+        <div class="drawer-portal-login-wrapper">
+            <a href="login.html" class="btn btn-outline drawer-portal-btn">Portal Login</a>
         </div>
-        <div class="drawer-item" id="mobile-rtl-toggle">
-            🔄 Switch RTL
+        <div class="drawer-actions">
+            <button type="button" id="mobile-rtl-toggle" class="toggle-btn" title="Switch Language Direction" aria-label="Switch Language Direction">
+                <i class="fa-solid fa-right-left"></i>
+            </button>
+            <button type="button" id="mobile-theme-toggle" class="toggle-btn" title="Toggle theme" aria-label="Toggle theme">🌙</button>
         </div>
     </div>
 
@@ -414,7 +419,10 @@
                             class="fa-solid fa-star"></i>
                     </div>
                     <p>"The infusion nurses and Dr. Vance made my 6 cycles of chemotherapy feel manageable. Their kindness, comfort, and constant encouragement gave me hope every single day."</p>
-                    <div style="font-weight: 700; color: var(--text-main); margin-top: 15px;">Elena R.</div>
+                    <div style="margin-top: 20px; margin-bottom: 10px;">
+                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Elena R." style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 3px solid var(--accent); padding: 2px;">
+                    </div>
+                    <div style="font-weight: 700; color: var(--text-main);">Elena R.</div>
                     <div class="text-muted" style="font-size: 0.9rem;">Breast Cancer Survivor (3 Years Remission)</div>
                 </div>
 
@@ -425,7 +433,10 @@
                             class="fa-solid fa-star"></i>
                     </div>
                     <p>"The coordination between my chemotherapy and radiation therapy was seamless. The patient portal kept my schedule and medication reminders organized without missing a beat."</p>
-                    <div style="font-weight: 700; color: var(--text-main); margin-top: 15px;">Marcus B.</div>
+                    <div style="margin-top: 20px; margin-bottom: 10px;">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Marcus B." style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 3px solid var(--accent); padding: 2px;">
+                    </div>
+                    <div style="font-weight: 700; color: var(--text-main);">Marcus B.</div>
                     <div class="text-muted" style="font-size: 0.9rem;">Hodgkin Lymphoma Survivor</div>
                 </div>
 
@@ -436,7 +447,10 @@
                             class="fa-solid fa-star"></i>
                     </div>
                     <p>"When my mother was diagnosed, we were overwhelmed. The nurse navigator walked us through every lab report, clinical trial option, and nutrition plan with immense compassion."</p>
-                    <div style="font-weight: 700; color: var(--text-main); margin-top: 15px;">Grace T.</div>
+                    <div style="margin-top: 20px; margin-bottom: 10px;">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Grace T." style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 3px solid var(--accent); padding: 2px;">
+                    </div>
+                    <div style="font-weight: 700; color: var(--text-main);">Grace T.</div>
                     <div class="text-muted" style="font-size: 0.9rem;">Daughter & Family Caregiver</div>
                 </div>
             </div>
@@ -446,17 +460,14 @@
     <!-- CTA Section -->
     <section class="section" id="home1-ready">
         <div class="container">
-            <div
-                style="background: linear-gradient(135deg, var(--primary), var(--secondary)); border-radius: 20px; padding: 60px; color: white; text-align: center; box-shadow: var(--shadow-lg);">
-                <h2 style="font-size: 2.5rem; margin-bottom: 1rem; color: white;">Begin Your Journey with Hope & Support</h2>
-                <p style="font-size: 1.25rem; opacity: 0.95; margin-bottom: 2rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+            <div class="ready-cta-box">
+                <h2>Begin Your Journey with Hope & Support</h2>
+                <p>
                     Speak with an oncology nurse navigator or access your secure patient portal to review treatment cycles, care notes, and schedules.
                 </p>
-                <div class="ready-cta-actions"
-                    style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center;">
-                    <a href="dashboard.html" class="btn btn-secondary"
-                        style="background: white; color: var(--primary); padding: 15px 40px; font-weight: 700;">Access Patient Portal</a>
-                    <a href="tel:1234567890" class="btn btn-outline" style="border-color: white; color: white; padding: 15px 30px;"><i class="fa-solid fa-phone" style="margin-right: 8px;"></i> 24/7 Helpline: (123) 456-7890</a>
+                <div class="ready-cta-actions">
+                    <a href="dashboard.html" class="btn btn-secondary ready-btn-portal">Access Patient Portal</a>
+                    <a href="tel:1234567890" class="btn btn-outline ready-btn-helpline"><i class="fa-solid fa-phone"></i> 24/7 Helpline: (123) 456-7890</a>
                 </div>
             </div>
         </div>
@@ -476,7 +487,7 @@
                     </p>
                     <div class="footer-social">
                         <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
                         <a href="#"><i class="fa-brands fa-linkedin"></i></a>
                         <a href="#"><i class="fa-brands fa-instagram"></i></a>
                     </div>

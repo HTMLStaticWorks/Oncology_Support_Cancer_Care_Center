@@ -15,11 +15,20 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
     <link rel="icon" type="image/png" href="img/favicon.png">
+    <link rel="apple-touch-icon" href="img/favicon.png">
     <link rel="stylesheet" href="css/auth.css">
 </head>
 
 <body class="auth-body">
+
+    <div class="auth-nav-controls">
+        <button type="button" id="rtl-toggle" class="toggle-btn" title="Switch Language Direction" aria-label="Switch Language Direction">
+            <i class="fa-solid fa-right-left"></i>
+        </button>
+        <button type="button" id="theme-toggle" class="toggle-btn" title="Toggle theme" aria-label="Toggle theme">🌙</button>
+    </div>
 
     <div class="auth-card">
         <div class="auth-header">
@@ -27,8 +36,6 @@
                 <a href="index.html" class="logo auth-logo" aria-label="Oncura Home">
                     <i class="logo-icon"><i class="fa-solid fa-ribbon"></i></i> <span>Oncura</span>
                 </a>
-                <button type="button" id="theme-toggle" class="toggle-btn" title="Toggle theme"
-                    aria-label="Toggle theme">🌙</button>
             </div>
             <h1>Patient Portal Intake</h1>
             <p>Register to manage cancer care schedules, care notes, and reminders.</p>
@@ -49,11 +56,21 @@
             </div>
             <div class="form-group">
                 <label>Password</label>
-                <input type="password" placeholder="••••••••" required>
+                <div class="password-input-wrapper">
+                    <input type="password" placeholder="••••••••" required>
+                    <button type="button" class="password-toggle-btn" aria-label="Toggle password visibility">
+                        <i class="fa-regular fa-eye"></i>
+                    </button>
+                </div>
             </div>
             <div class="form-group">
                 <label>Confirm Password</label>
-                <input type="password" placeholder="••••••••" required>
+                <div class="password-input-wrapper">
+                    <input type="password" placeholder="••••••••" required>
+                    <button type="button" class="password-toggle-btn" aria-label="Toggle password visibility">
+                        <i class="fa-regular fa-eye"></i>
+                    </button>
+                </div>
             </div>
 
             <div class="checkbox-group">
@@ -66,8 +83,22 @@
             <button type="submit" class="btn btn-primary btn-auth">Create Patient Portal Account</button>
         </form>
 
+        <div class="divider">OR</div>
+
+        <button class="btn-social btn-google" onclick="window.location.href='dashboard.html'">
+            <i class="fa-brands fa-google"></i> Sign In with Hospital Account
+        </button>
+
+        <button class="btn-social btn-apple" onclick="window.location.href='dashboard.html'">
+            <i class="fa-brands fa-apple"></i> Sign In with Apple
+        </button>
+
         <div class="auth-footer" style="margin-top: 25px;">
             Already have an account? <a href="login.html">Sign In Here</a>
+        </div>
+
+        <div style="margin-top: 20px; font-size: 0.8rem; color: var(--text-muted);">
+            <i class="fa-solid fa-shield-halved" style="color: var(--primary);"></i> HIPAA-Compliant 256-Bit Encrypted Patient Gateway
         </div>
     </div>
 

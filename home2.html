@@ -15,7 +15,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
     <link rel="icon" type="image/png" href="img/favicon.png">
+    <link rel="apple-touch-icon" href="img/favicon.png">
     <style>
         @media (min-width: 768px) and (max-width: 1023px) {
             #home2-tailored .cards-grid {
@@ -61,6 +63,15 @@
         <a href="blog.html" class="mobile-link">Resources</a>
         <a href="contact.html" class="mobile-link">Contact</a>
         <a href="dashboard.html" class="mobile-link">Portal</a>
+        <div class="drawer-portal-login-wrapper">
+            <a href="login.html" class="btn btn-outline drawer-portal-btn">Portal Login</a>
+        </div>
+        <div class="drawer-actions">
+            <button type="button" id="mobile-rtl-toggle" class="toggle-btn" title="Switch Language Direction" aria-label="Switch Language Direction">
+                <i class="fa-solid fa-right-left"></i>
+            </button>
+            <button type="button" id="mobile-theme-toggle" class="toggle-btn" title="Toggle theme" aria-label="Toggle theme">🌙</button>
+        </div>
     </div>
 
     <!-- Navigation -->
@@ -144,12 +155,12 @@
     <!-- Feature Section: Infusion Suites -->
     <section class="section" style="background-color: var(--bg-gray); padding: 90px 0;">
         <div class="container">
-            <div style="display: flex; flex-direction: row-reverse; flex-wrap: wrap; gap: 50px; align-items: center;">
-                <div style="flex: 1; min-width: 300px; border-radius: var(--border-radius); overflow: hidden; box-shadow: var(--shadow-lg);">
+            <div class="care-feature-grid">
+                <div class="care-feature-visual">
                     <img src="img/chemo_suite.jpg" alt="Cancer Infusion Suite" style="width: 100%; height: auto; object-fit: cover;">
                 </div>
-                <div style="flex: 1; min-width: 300px;">
-                    <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem; line-height: 1.2;">Heated Infusion Suites Built for Serenity</h2>
+                <div class="care-feature-content">
+                    <h2>Heated Infusion Suites Built for Serenity</h2>
                     <p style="margin-bottom: 1.5rem; color: var(--text-muted); font-size: 1.1rem; line-height: 1.7;">
                         Chemotherapy treatment should never feel institutional. Our center features private and semi-private bays filled with warm sunlight, peaceful garden views, and medical amenities engineered for relaxation.
                     </p>
@@ -169,17 +180,100 @@
         </div>
     </section>
 
-    <!-- Feature Section: Precision Tracking -->
-    <section class="section sanctuary-section" style="padding: 90px 0;">
+    <!-- 4-Step Patient Journey Pathway Section -->
+    <section class="section care-journey-section" style="padding: 90px 0;">
         <div class="container">
-            <div class="sanctuary-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 60px; align-items: center;">
-                <div class="sanctuary-content">
+            <div class="section-header text-center">
+                <span class="badge" style="background: rgba(13, 118, 133, 0.12); color: var(--primary); padding: 8px 16px; border-radius: 30px; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px; display: inline-block;">
+                    <i class="fa-solid fa-route"></i> STRUCTURED HEALING PATHWAY
+                </span>
+                <h2 style="font-size: clamp(2rem, 3vw, 2.6rem); margin-bottom: 15px;">Your Oncology Care Journey</h2>
+                <p class="text-muted" style="max-width: 680px; margin: 0 auto; font-size: 1.1rem; line-height: 1.6;">
+                    A compassionate, step-by-step clinical roadmap designed to ensure no question goes unanswered and every treatment milestone is met with expert support.
+                </p>
+            </div>
+
+            <div class="care-journey-grid">
+                <!-- Step 1 -->
+                <div class="journey-card">
+                    <div class="journey-step-badge">01</div>
+                    <div class="journey-icon-wrap" style="background: rgba(13, 118, 133, 0.1); color: var(--primary);">
+                        <i class="fa-solid fa-dna"></i>
+                    </div>
+                    <h3>Genomic Staging & Intake</h3>
+                    <p class="text-muted">Expedited 48-hour consultation with tumor board review, NGS biomarker testing, and baseline health assessments.</p>
+                    <div class="journey-tag">
+                        <i class="fa-solid fa-check"></i> 48-Hour Priority Intake
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="journey-card">
+                    <div class="journey-step-badge">02</div>
+                    <div class="journey-icon-wrap" style="background: rgba(225, 29, 72, 0.1); color: var(--secondary);">
+                        <i class="fa-solid fa-vials"></i>
+                    </div>
+                    <h3>Targeted Therapy Protocol</h3>
+                    <p class="text-muted">Custom chemotherapy or immunotherapy compounding, scalp cooling tolerability, and precision radiation alignment.</p>
+                    <div class="journey-tag" style="background: rgba(225, 29, 72, 0.08); color: var(--secondary);">
+                        <i class="fa-solid fa-check"></i> Heated Infusion Bay
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="journey-card">
+                    <div class="journey-step-badge">03</div>
+                    <div class="journey-icon-wrap" style="background: rgba(245, 158, 11, 0.1); color: var(--accent-dark);">
+                        <i class="fa-solid fa-hand-holding-medical"></i>
+                    </div>
+                    <h3>Proactive Side-Effect Care</h3>
+                    <p class="text-muted">Daily supportive medication tracking, oncology dietitian visits, and 24/7 direct nurse navigator triage access.</p>
+                    <div class="journey-tag" style="background: rgba(245, 158, 11, 0.08); color: var(--accent-dark);">
+                        <i class="fa-solid fa-check"></i> 24/7 Nurse Triage
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="journey-card">
+                    <div class="journey-step-badge">04</div>
+                    <div class="journey-icon-wrap" style="background: rgba(16, 185, 129, 0.1); color: #059669;">
+                        <i class="fa-solid fa-heart-pulse"></i>
+                    </div>
+                    <h3>Survivorship & Wellness</h3>
+                    <p class="text-muted">Long-term surveillance schedules, physical rehabilitation, certified lymphedema care, and survivor peer circles.</p>
+                    <div class="journey-tag" style="background: rgba(16, 185, 129, 0.08); color: #059669;">
+                        <i class="fa-solid fa-check"></i> Personalized Care Plan
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pathway CTA Banner -->
+            <div class="care-pathway-banner">
+                <div class="pathway-banner-text">
+                    <h3 style="font-size: 1.35rem; margin-bottom: 6px; color: var(--text-main);">Have questions about your care pathway?</h3>
+                    <p class="text-muted" style="margin-bottom: 0; font-size: 0.95rem;">Our lead oncology nurse navigators are available to assist you and your family.</p>
+                </div>
+                <div class="pathway-banner-actions">
+                    <a href="contact.html" class="btn btn-primary" style="padding: 12px 24px;">Speak with a Navigator</a>
+                    <a href="tel:1234567890" class="btn btn-outline" style="padding: 12px 24px;"><i class="fa-solid fa-phone"></i> (123) 456-7890</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature Section: Precision Tracking -->
+    <section class="section sanctuary-section" style="background-color: var(--bg-gray); padding: 90px 0;">
+        <div class="container">
+            <div class="care-feature-grid">
+                <div class="care-feature-visual">
+                    <img src="img/radiation_tech.jpg" alt="Precision Cancer Care" style="width: 100%; height: auto; object-fit: cover;">
+                </div>
+                <div class="care-feature-content">
                     <span class="badge"
                         style="background: rgba(13, 118, 133, 0.12); color: var(--primary); padding: 8px 15px; border-radius: 30px; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; display: inline-block;">
                         PATIENT PORTAL
                     </span>
-                    <h2 style="font-size: 2.8rem; line-height: 1.2; margin-bottom: 20px;">The Digital <span
-                            style="color: var(--primary);">Care Companion</span></h2>
+                    <h2>The Digital <span style="color: var(--primary);">Care Companion</span></h2>
                     <p class="text-muted" style="font-size: 1.15rem; line-height: 1.7; margin-bottom: 30px;">
                         Stay in control of your treatment schedule, review clinical notes, manage anti-nausea medications, and view upcoming appointments in our secure patient portal.
                     </p>
@@ -205,10 +299,6 @@
 
                     <a href="dashboard.html" class="btn btn-primary">Open Patient Dashboard</a>
                 </div>
-
-                <div style="border-radius: var(--border-radius); overflow: hidden; box-shadow: var(--shadow-lg);">
-                    <img src="img/radiation_tech.jpg" alt="Precision Cancer Care" style="width: 100%; height: auto; object-fit: cover;">
-                </div>
             </div>
         </div>
     </section>
@@ -227,7 +317,7 @@
                     </p>
                     <div class="footer-social">
                         <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
                         <a href="#"><i class="fa-brands fa-linkedin"></i></a>
                         <a href="#"><i class="fa-brands fa-instagram"></i></a>
                     </div>

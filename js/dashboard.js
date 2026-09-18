@@ -69,6 +69,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 activeTab.classList.add('active');
             }
 
+            // Always scroll to the top of the page when switching dashboard tabs
+            window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+            window.scrollTo(0, 0);
+            document.documentElement.scrollTop = 0;
+            document.body.scrollTop = 0;
+            const mainContainer = document.querySelector('.dashboard-main');
+            if (mainContainer) {
+                mainContainer.scrollTop = 0;
+            }
+
             closeHamburgerMenu();
         });
     });

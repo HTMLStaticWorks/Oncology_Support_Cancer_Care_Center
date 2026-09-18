@@ -35,8 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
     themeToggles.forEach(btn => btn.addEventListener('click', toggleTheme));
 
     /* 2. RTL Support Toggle */
-    const rtlToggle = document.getElementById('rtl-toggle');
-    const mobileRtlToggle = document.getElementById('mobile-rtl-toggle');
+    const rtlToggles = document.querySelectorAll('#rtl-toggle, #mobile-rtl-toggle, #dash-rtl-toggle');
 
     // Load saved direction
     const savedDir = localStorage.getItem('direction') || 'ltr';
@@ -49,8 +48,31 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('direction', newDir);
     }
 
-    if (rtlToggle) rtlToggle.addEventListener('click', toggleRTL);
-    if (mobileRtlToggle) mobileRtlToggle.addEventListener('click', toggleRTL);
+    rtlToggles.forEach(btn => btn.addEventListener('click', toggleRTL));
+
+    /* Password Visibility Toggle */
+    document.querySelectorAll('.password-toggle-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const wrapper = btn.closest('.password-input-wrapper');
+            const input = wrapper ? wrapper.querySelector('input') : null;
+            const icon = btn.querySelector('i');
+            if (input) {
+                if (input.type === 'password') {
+                    input.type = 'text';
+                    if (icon) {
+                        icon.classList.remove('fa-eye');
+                        icon.classList.add('fa-eye-slash');
+                    }
+                } else {
+                    input.type = 'password';
+                    if (icon) {
+                        icon.classList.remove('fa-eye-slash');
+                        icon.classList.add('fa-eye');
+                    }
+                }
+            }
+        });
+    });
 
     /* 3. Active Nav Link Highlighting */
     (function setActiveNavLinks() {

@@ -15,7 +15,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
     <link rel="icon" type="image/png" href="img/favicon.png">
+    <link rel="apple-touch-icon" href="img/favicon.png">
 </head>
 
 <body>
@@ -40,6 +42,15 @@
         <a href="blog.html" class="mobile-link">Resources</a>
         <a href="contact.html" class="mobile-link">Contact</a>
         <a href="dashboard.html" class="mobile-link">Portal</a>
+        <div class="drawer-portal-login-wrapper">
+            <a href="login.html" class="btn btn-outline drawer-portal-btn">Portal Login</a>
+        </div>
+        <div class="drawer-actions">
+            <button type="button" id="mobile-rtl-toggle" class="toggle-btn" title="Switch Language Direction" aria-label="Switch Language Direction">
+                <i class="fa-solid fa-right-left"></i>
+            </button>
+            <button type="button" id="mobile-theme-toggle" class="toggle-btn" title="Toggle theme" aria-label="Toggle theme">🌙</button>
+        </div>
     </div>
 
     <!-- Navigation -->
@@ -72,7 +83,7 @@
             <span class="service-content-badge" style="background: rgba(255, 255, 255, 0.2); color: white; display: inline-block; margin-bottom: 15px;">
                 OUR MULTIDISCIPLINARY CARE TEAM
             </span>
-            <h1 style="font-size: 3.5rem; line-height: 1.1; margin-top: 15px; color: white;">
+            <h1 class="inner-hero-title">
                 Guided by <span style="color: var(--secondary-light);">Compassion</span> & Clinical Mastery
             </h1>
             <p style="font-size: 1.3rem; max-width: 800px; margin: 25px auto 0; color: rgba(255, 255, 255, 0.9);">
@@ -97,7 +108,7 @@
                         <div style="display: flex; gap: 15px; align-items: flex-start;">
                             <div
                                 style="width: 44px; height: 44px; background: var(--secondary); color: white; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1.1rem;">
-                                <i class="fa-solid fa-hands-holding-heart"></i>
+                                <i class="fa-solid fa-user-nurse"></i>
                             </div>
                             <div>
                                 <h4 style="margin-bottom: 5px;">Nurse Navigator Advocacy</h4>
@@ -132,7 +143,7 @@
                 <p class="text-muted">Experienced oncologists and supportive care leaders fighting for you.</p>
             </div>
 
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; text-align: left;">
+            <div class="specialists-grid" style="text-align: left;">
                 
                 <!-- Doctor 1 -->
                 <div class="card" style="background: var(--bg-card); padding: 30px; border-radius: var(--border-radius); border: 1px solid var(--border-color); box-shadow: var(--shadow-md);">
@@ -254,7 +265,7 @@
                     </p>
                     <div class="footer-social">
                         <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
                         <a href="#"><i class="fa-brands fa-linkedin"></i></a>
                         <a href="#"><i class="fa-brands fa-instagram"></i></a>
                     </div>
