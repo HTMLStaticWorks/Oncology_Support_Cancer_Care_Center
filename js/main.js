@@ -196,11 +196,58 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    backToTopBtn.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
+    /* 9. FAQ Accordion Dropdown */
+    const faqItems = document.querySelectorAll('.faq-item');
+    if (faqItems.length > 0) {
+        faqItems.forEach(item => {
+            const header = item.querySelector('.faq-header');
+            const content = item.querySelector('.faq-content');
+
+            // Initialize active items
+            if (item.classList.contains('active') && content) {
+                content.style.maxHeight = content.scrollHeight + 'px';
+            }
+
+            if (header && content) {
+                header.addEventListener('click', () => {
+                    const isOpen = item.classList.contains('active');
+
+                    // Close other items in the accordion
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item && otherItem.classList.contains('active')) {
+                            otherItem.classList.remove('active');
+                            const otherBtn = otherItem.querySelector('.faq-header');
+                            const otherContent = otherItem.querySelector('.faq-content');
+                            if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
+                            if (otherContent) otherContent.style.maxHeight = null;
+                        }
+                    });
+
+                    // Toggle current item
+                    if (isOpen) {
+                        item.classList.remove('active');
+                        header.setAttribute('aria-expanded', 'false');
+                        content.style.maxHeight = null;
+                    } else {
+                        item.classList.add('active');
+                        header.setAttribute('aria-expanded', 'true');
+                        content.style.maxHeight = content.scrollHeight + 'px';
+                    }
+                });
+            }
         });
-    });
+
+        // Recalculate heights when resized to keep dynamic layout smooth
+        window.addEventListener('resize', () => {
+            faqItems.forEach(item => {
+                if (item.classList.contains('active')) {
+                    const content = item.querySelector('.faq-content');
+                    if (content) {
+                        content.style.maxHeight = content.scrollHeight + 'px';
+                    }
+                }
+            });
+        });
+    }
 });
 

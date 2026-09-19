@@ -252,65 +252,113 @@
                 <p class="text-muted" style="max-width: 650px; margin: 0 auto;">Answers to common inquiries regarding appointments, triage access, treatments, and insurance coverage.</p>
             </div>
 
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; max-width: 1050px; margin: 0 auto; text-align: left;">
-                <div class="faq-box">
-                    <h4 style="color: var(--primary); margin-bottom: 10px; font-size: 1.12rem; display: flex; align-items: flex-start; gap: 10px;">
-                        <i class="fa-solid fa-circle-question" style="color: var(--primary); margin-top: 3px; flex-shrink: 0;"></i>
-                        <span>How quickly can a new patient schedule an appointment?</span>
-                    </h4>
-                    <p class="text-muted" style="font-size: 0.95rem; line-height: 1.6; margin-bottom: 0;">
-                        We prioritize newly diagnosed patients and second opinion requests within 24 to 48 hours. Our nurse navigators assist with expediting medical records and pathology reports.
-                    </p>
+            <div class="faq-accordion" id="faqAccordion">
+                <!-- FAQ Item 1 -->
+                <div class="faq-item active">
+                    <button class="faq-header" type="button" aria-expanded="true">
+                        <span class="faq-title">
+                            <i class="fa-solid fa-circle-question"></i>
+                            <span>How quickly can a new patient schedule an appointment?</span>
+                        </span>
+                        <span class="faq-icon-toggle">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </span>
+                    </button>
+                    <div class="faq-content">
+                        <div class="faq-content-inner">
+                            We prioritize newly diagnosed patients and second opinion requests within 24 to 48 hours. Our nurse navigators assist with expediting medical records and pathology reports.
+                        </div>
+                    </div>
                 </div>
 
-                <div class="faq-box">
-                    <h4 style="color: var(--primary); margin-bottom: 10px; font-size: 1.12rem; display: flex; align-items: flex-start; gap: 10px;">
-                        <i class="fa-solid fa-circle-question" style="color: var(--primary); margin-top: 3px; flex-shrink: 0;"></i>
-                        <span>Do I need a physician referral to be seen?</span>
-                    </h4>
-                    <p class="text-muted" style="font-size: 0.95rem; line-height: 1.6; margin-bottom: 0;">
-                        While physician referrals are common, we gladly accept self-referrals for consultations, chemotherapy infusion care, radiation coordination, and survivorship evaluations.
-                    </p>
+                <!-- FAQ Item 2 -->
+                <div class="faq-item">
+                    <button class="faq-header" type="button" aria-expanded="false">
+                        <span class="faq-title">
+                            <i class="fa-solid fa-circle-question"></i>
+                            <span>Do I need a physician referral to be seen?</span>
+                        </span>
+                        <span class="faq-icon-toggle">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </span>
+                    </button>
+                    <div class="faq-content">
+                        <div class="faq-content-inner">
+                            While physician referrals are common, we gladly accept self-referrals for consultations, chemotherapy infusion care, radiation coordination, and survivorship evaluations.
+                        </div>
+                    </div>
                 </div>
 
-                <div class="faq-box">
-                    <h4 style="color: var(--primary); margin-bottom: 10px; font-size: 1.12rem; display: flex; align-items: flex-start; gap: 10px;">
-                        <i class="fa-solid fa-circle-question" style="color: var(--primary); margin-top: 3px; flex-shrink: 0;"></i>
-                        <span>What should I bring to my initial consultation?</span>
-                    </h4>
-                    <p class="text-muted" style="font-size: 0.95rem; line-height: 1.6; margin-bottom: 0;">
-                        Please bring government-issued photo ID, active insurance cards, prior diagnostic imaging discs/reports, a list of current medications and supplements, and any questions for the care team.
-                    </p>
+                <!-- FAQ Item 3 -->
+                <div class="faq-item">
+                    <button class="faq-header" type="button" aria-expanded="false">
+                        <span class="faq-title">
+                            <i class="fa-solid fa-circle-question"></i>
+                            <span>What should I bring to my initial consultation?</span>
+                        </span>
+                        <span class="faq-icon-toggle">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </span>
+                    </button>
+                    <div class="faq-content">
+                        <div class="faq-content-inner">
+                            Please bring government-issued photo ID, active insurance cards, prior diagnostic imaging discs/reports, a list of current medications and supplements, and any questions for the care team.
+                        </div>
+                    </div>
                 </div>
 
-                <div class="faq-box">
-                    <h4 style="color: var(--primary); margin-bottom: 10px; font-size: 1.12rem; display: flex; align-items: flex-start; gap: 10px;">
-                        <i class="fa-solid fa-circle-question" style="color: var(--primary); margin-top: 3px; flex-shrink: 0;"></i>
-                        <span>How does the 24/7 urgent oncology triage work?</span>
-                    </h4>
-                    <p class="text-muted" style="font-size: 0.95rem; line-height: 1.6; margin-bottom: 0;">
-                        Our 24/7 triage hotline is staffed by Oncology Certified Nurses (OCN) who can assess acute chemotherapy side effects, fever, pain, or infusion reactions and arrange immediate intervention.
-                    </p>
+                <!-- FAQ Item 4 -->
+                <div class="faq-item">
+                    <button class="faq-header" type="button" aria-expanded="false">
+                        <span class="faq-title">
+                            <i class="fa-solid fa-circle-question"></i>
+                            <span>How does the 24/7 urgent oncology triage work?</span>
+                        </span>
+                        <span class="faq-icon-toggle">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </span>
+                    </button>
+                    <div class="faq-content">
+                        <div class="faq-content-inner">
+                            Our 24/7 triage hotline is staffed by Oncology Certified Nurses (OCN) who can assess acute chemotherapy side effects, fever, pain, or infusion reactions and arrange immediate intervention.
+                        </div>
+                    </div>
                 </div>
 
-                <div class="faq-box">
-                    <h4 style="color: var(--primary); margin-bottom: 10px; font-size: 1.12rem; display: flex; align-items: flex-start; gap: 10px;">
-                        <i class="fa-solid fa-circle-question" style="color: var(--primary); margin-top: 3px; flex-shrink: 0;"></i>
-                        <span>What insurance and financial assistance options exist?</span>
-                    </h4>
-                    <p class="text-muted" style="font-size: 0.95rem; line-height: 1.6; margin-bottom: 0;">
-                        We participate with Medicare, Medicaid, and major commercial health plans. Dedicated financial navigators also help patients explore co-pay assistance, grants, and pharmaceutical support.
-                    </p>
+                <!-- FAQ Item 5 -->
+                <div class="faq-item">
+                    <button class="faq-header" type="button" aria-expanded="false">
+                        <span class="faq-title">
+                            <i class="fa-solid fa-circle-question"></i>
+                            <span>What insurance and financial assistance options exist?</span>
+                        </span>
+                        <span class="faq-icon-toggle">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </span>
+                    </button>
+                    <div class="faq-content">
+                        <div class="faq-content-inner">
+                            We participate with Medicare, Medicaid, and major commercial health plans. Dedicated financial navigators also help patients explore co-pay assistance, grants, and pharmaceutical support.
+                        </div>
+                    </div>
                 </div>
 
-                <div class="faq-box">
-                    <h4 style="color: var(--primary); margin-bottom: 10px; font-size: 1.12rem; display: flex; align-items: flex-start; gap: 10px;">
-                        <i class="fa-solid fa-circle-question" style="color: var(--primary); margin-top: 3px; flex-shrink: 0;"></i>
-                        <span>Can a family member or caregiver accompany me?</span>
-                    </h4>
-                    <p class="text-muted" style="font-size: 0.95rem; line-height: 1.6; margin-bottom: 0;">
-                        Yes, family members and caregivers are warmly welcomed and encouraged to join both consultation visits and chemotherapy infusion sessions in our spacious suites.
-                    </p>
+                <!-- FAQ Item 6 -->
+                <div class="faq-item">
+                    <button class="faq-header" type="button" aria-expanded="false">
+                        <span class="faq-title">
+                            <i class="fa-solid fa-circle-question"></i>
+                            <span>Can a family member or caregiver accompany me?</span>
+                        </span>
+                        <span class="faq-icon-toggle">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </span>
+                    </button>
+                    <div class="faq-content">
+                        <div class="faq-content-inner">
+                            Yes, family members and caregivers are warmly welcomed and encouraged to join both consultation visits and chemotherapy infusion sessions in our spacious suites.
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

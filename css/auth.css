@@ -11,6 +11,13 @@ body.auth-body {
     padding: 20px;
 }
 
+@media (max-width: 576px) {
+    body.auth-body {
+        padding: 70px 16px 24px;
+        align-items: flex-start;
+    }
+}
+
 .auth-card {
     background-color: var(--bg-card);
     padding: 40px;
@@ -21,14 +28,26 @@ body.auth-body {
     text-align: center;
 }
 
+@media (max-width: 576px) {
+    .auth-card {
+        padding: 28px 20px;
+        border-radius: 16px;
+    }
+}
+
 .auth-nav-controls {
     position: fixed;
     top: 20px;
     right: 20px;
-    z-index: 1000;
+    z-index: 9999;
     display: flex;
     align-items: center;
     gap: 10px;
+    background: var(--bg-card);
+    padding: 6px 10px;
+    border-radius: 50px;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-color);
 }
 
 [dir="rtl"] .auth-nav-controls {
@@ -38,14 +57,15 @@ body.auth-body {
 
 @media (max-width: 576px) {
     .auth-nav-controls {
-        top: 14px;
-        right: 14px;
-        gap: 8px;
+        top: 12px;
+        right: 12px;
+        gap: 6px;
+        padding: 5px 8px;
     }
     
     [dir="rtl"] .auth-nav-controls {
         right: auto;
-        left: 14px;
+        left: 12px;
     }
 }
 
@@ -224,6 +244,15 @@ body.auth-body {
     color: white;
     margin-bottom: 12px;
     font-size: 0.95rem;
+    white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+    .btn-social {
+        font-size: 0.78rem;
+        padding: 10px 8px;
+        gap: 7px;
+    }
 }
 
 .btn-google {
