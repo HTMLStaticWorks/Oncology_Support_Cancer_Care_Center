@@ -7,7 +7,7 @@ body.auth-body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background-color: var(--bg-gray);
+    background: linear-gradient(135deg, rgba(13, 118, 133, 0.85), rgba(11, 19, 30, 0.9)), url('../img/oncology_hero.jpg') center/cover no-repeat fixed;
     padding: 20px;
 }
 

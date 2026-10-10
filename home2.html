@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Specialized Care | Oncura Cancer Care Center</title>
+    <title>Home 2 | Advanced Precision Oncology & Cancer Care Center</title>
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,23 +19,67 @@
     <link rel="icon" type="image/png" href="img/favicon.png">
     <link rel="apple-touch-icon" href="img/favicon.png">
     <style>
-        @media (min-width: 768px) and (max-width: 1023px) {
-            #home2-tailored .cards-grid {
-                display: flex !important;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 20px;
-            }
+        .home2-programs-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
 
-            #home2-tailored .cards-grid > div {
-                flex: 0 0 calc(50% - 10px);
-                max-width: calc(50% - 10px);
-                box-sizing: border-box;
-            }
+        .home2-facilities-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
 
-            #home2-tailored .cards-grid > div:last-child:nth-child(odd) {
-                flex: 0 0 calc(50% - 10px);
-                max-width: calc(50% - 10px);
+        .home2-specialists-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .home2-stories-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .opinion-result-box {
+            background: var(--bg-gray);
+            border: 1px dashed var(--primary);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 20px;
+            display: none;
+        }
+
+        .opinion-result-box.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 1024px) {
+            .home2-programs-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .home2-specialists-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .home2-stories-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .home2-programs-grid,
+            .home2-facilities-grid,
+            .home2-specialists-grid,
+            .home2-stories-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -57,7 +101,7 @@
             </button>
         </div>
         <a href="index.html" class="mobile-link">Home</a>
-        <a href="home2.html" class="mobile-link active">Care</a>
+        <a href="home2.html" class="mobile-link active">Home 2</a>
         <a href="about.html" class="mobile-link">Team</a>
         <a href="services.html" class="mobile-link">Services</a>
         <a href="blog.html" class="mobile-link">Resources</a>
@@ -83,7 +127,7 @@
             </a>
             <nav class="nav-menu">
                 <a href="index.html" class="nav-link">Home</a>
-                <a href="home2.html" class="nav-link active">Care</a>
+                <a href="home2.html" class="nav-link active">Home 2</a>
                 <a href="about.html" class="nav-link">Team</a>
                 <a href="services.html" class="nav-link">Services</a>
                 <a href="blog.html" class="nav-link">Resources</a>
@@ -91,97 +135,249 @@
                 <a href="dashboard.html" class="nav-link">Portal</a>
             </nav>
             <div class="nav-actions">
-                <button id="rtl-toggle" class="toggle-btn"><i class="fa-solid fa-right-left"></i></button>
-                <button id="theme-toggle" class="toggle-btn">🌙</button>
+                <button id="rtl-toggle" class="toggle-btn" title="Switch Language Direction"><i class="fa-solid fa-right-left"></i></button>
+                <button id="theme-toggle" class="toggle-btn" title="Toggle theme">🌙</button>
                 <a href="login.html" class="btn btn-outline hide-mobile" style="padding: 10px 20px;">Portal Login</a>
             </div>
         </div>
     </header>
 
-    <!-- Alternative Hero Section -->
-    <section class="section" style="padding: 0; background-image: linear-gradient(rgba(13, 118, 133, 0.8), rgba(11, 19, 30, 0.9)), url('img/oncology_hero.jpg'); background-size: cover; background-position: center; min-height: calc(100vh - 70px); display: flex; align-items: center; color: white; text-align: center;">
+    <!-- 1. Dedicated Home 2 Hero Section: Split Precision Oncology Showcase -->
+    <section class="home2-hero" id="home2-hero">
         <div class="container">
-            <div style="max-width: 850px; margin: 0 auto;">
-                <span class="badge" style="background: rgba(255, 255, 255, 0.2); color: white; margin-bottom: 20px; display: inline-block;">
-                    <i class="fa-solid fa-ribbon"></i> SPECIALIZED ONCOLOGY EXCELLENCE
-                </span>
-                <h1 style="font-size: clamp(2rem, 3.5vw, 3rem); line-height: 1.2; margin-bottom: 1.25rem; color: white;">
-                    Advanced Oncology, <br><span style="color: var(--secondary-light);">Tailored for You.</span>
-                </h1>
-                <p style="font-size: 1.25rem; color: rgba(255, 255, 255, 0.9); margin-bottom: 2.5rem; line-height: 1.7;">
-                    Experience precision medicine paired with genuine empathy. From tumor board staging to chemotherapy cycles and radiation coordination, your health is our sole priority.
-                </p>
-                <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
-                    <a href="dashboard.html" class="btn btn-primary" style="padding: 16px 36px;">Patient Portal</a>
-                    <a href="contact.html" class="btn btn-secondary" style="padding: 16px 36px;">Schedule Intake</a>
+            <div class="home2-hero-grid">
+                <!-- Hero Left: Strategic Proposition -->
+                <div class="home2-hero-left">
+                    <div class="home2-hero-badge">
+                        <i class="fa-solid fa-certificate" style="color: var(--secondary-light);"></i>
+                        NCI-Standard Multidisciplinary Oncology
+                    </div>
+                    <h1>
+                        Next-Generation Cancer Care, <br>
+                        <span class="text-highlight">Tailored to Your Biology.</span>
+                    </h1>
+                    <p class="hero-lead">
+                        Uniting next-generation genomic sequencing, heated private infusion suites, and multidisciplinary tumor boards to deliver personalized therapy and lifelong survivorship support.
+                    </p>
+                    <div class="home2-hero-actions">
+                        <a href="contact.html" class="btn btn-primary" style="padding: 16px 32px; font-size: 1.05rem; border-radius: 50px; box-shadow: 0 10px 25px rgba(13, 118, 133, 0.4);">
+                            Request Priority Intake <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i>
+                        </a>
+                        <a href="#home2-programs" class="btn btn-outline" style="padding: 16px 30px; font-size: 1.05rem; border-radius: 50px; border-color: rgba(255,255,255,0.7); color: #ffffff; background: rgba(255,255,255,0.08);">
+                            Explore Care Programs
+                        </a>
+                    </div>
+                    <div class="home2-hero-trust">
+                        <div class="home2-trust-item">
+                            <i class="fa-solid fa-clock-rotate-left"></i>
+                            <span>48-Hour Fast Consultation</span>
+                        </div>
+                        <div class="home2-trust-item">
+                            <i class="fa-solid fa-user-shield"></i>
+                            <span>Board-Certified Specialists</span>
+                        </div>
+                        <div class="home2-trust-item">
+                            <i class="fa-solid fa-dna"></i>
+                            <span>NGS Biomarker Profiling</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Right: Interactive Care & Triage Quick Navigator Card -->
+                <div class="home2-hero-right">
+                    <div class="home2-triage-card">
+                        <div class="home2-triage-card-header">
+                            <h3><i class="fa-solid fa-stethoscope" style="color: var(--primary);"></i> Care Navigator</h3>
+                            <span class="home2-live-indicator">
+                                <span class="home2-live-dot"></span> Triage Active
+                            </span>
+                        </div>
+                        <div class="home2-triage-form">
+                            <label for="cancerTypeSelect">Cancer Specialty / Subtype</label>
+                            <select id="cancerTypeSelect" class="home2-triage-select">
+                                <option value="breast">Breast Oncology & Reconstruction</option>
+                                <option value="lung">Thoracic & Lung Cancer</option>
+                                <option value="gi">Gastrointestinal & Colorectal</option>
+                                <option value="hematology">Hematology, Lymphoma & Leukemia</option>
+                                <option value="prostate">Urologic & Prostate Oncology</option>
+                                <option value="gyn">Gynecologic Oncology</option>
+                                <option value="rare">Sarcoma & Rare Tumors</option>
+                            </select>
+
+                            <label for="consultTypeSelect">Intake Type</label>
+                            <select id="consultTypeSelect" class="home2-triage-select">
+                                <option value="first">Initial Diagnosis & Rapid Workup</option>
+                                <option value="second">Expert Second Opinion (48-hr review)</option>
+                                <option value="transfer">Active Treatment Transfer</option>
+                                <option value="trials">Precision Clinical Trial Screening</option>
+                            </select>
+
+                            <label>Quick Care Filters</label>
+                            <div class="home2-filter-chips">
+                                <span class="home2-chip active" onclick="selectChip(this)">Heated Infusions</span>
+                                <span class="home2-chip" onclick="selectChip(this)">Scalp Cooling</span>
+                                <span class="home2-chip" onclick="selectChip(this)">Genetic Testing</span>
+                                <span class="home2-chip" onclick="selectChip(this)">24/7 Triage</span>
+                            </div>
+
+                            <a href="contact.html" class="btn btn-secondary" style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 14px; font-weight: 700; border-radius: 10px;">
+                                <i class="fa-solid fa-calendar-check"></i> Connect with Nurse Navigator
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Tailored Oncology Focus Section -->
-    <section class="section" id="home2-tailored" style="padding: 90px 0;">
+    <!-- 2. Urgent Clinical Triage & Rapid Support Strip -->
+    <section class="home2-alert-strip">
+        <div class="container">
+            <div class="home2-alert-inner">
+                <div class="home2-alert-text">
+                    <i class="fa-solid fa-triangle-exclamation" style="font-size: 1.3rem;"></i>
+                    <span><strong>Urgent Oncology Symptom or Fever (>100.4°F)?</strong> Direct clinical triage available 24/7 for active patients.</span>
+                </div>
+                <a href="tel:1234567890" class="home2-alert-btn">
+                    <i class="fa-solid fa-phone"></i> Call 24/7 Helpline: (123) 456-7890
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Specialized Oncology Pillars & Clinical Programs Matrix -->
+    <section class="section" id="home2-programs" style="padding: 90px 0;">
         <div class="container">
             <div class="section-header text-center">
-                <h2>Pillars of Specialized Cancer Care</h2>
-                <p class="text-muted">Targeted multidisciplinary clinical excellence at every stage.</p>
+                <span class="badge" style="background: rgba(13, 118, 133, 0.12); color: var(--primary); padding: 8px 18px; border-radius: 30px; font-weight: 700; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px; display: inline-block;">
+                    <i class="fa-solid fa-cubes-stacked"></i> MULTIDISCIPLINARY EXCELLENCE
+                </span>
+                <h2 style="font-size: clamp(2rem, 3.2vw, 2.7rem); margin-bottom: 16px;">Core Oncology Clinical Programs</h2>
+                <p class="text-muted" style="max-width: 720px; margin: 0 auto; font-size: 1.1rem; line-height: 1.7;">
+                    Our disease-specific clinical teams integrate tumor genomic profiling, targeted biologics, precision radiation, and supportive oncology into a single collaborative care plan.
+                </p>
             </div>
-            <div class="cards-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px;">
-                <div
-                    style="padding: 40px; border: 1px solid var(--border-color); border-radius: 12px; text-align: left; background: var(--bg-card); transition: var(--transition); box-shadow: var(--shadow-sm);">
-                    <i class="fa-solid fa-vial-circle-check"
-                        style="font-size: 2.5rem; color: var(--primary); margin-bottom: 20px;"></i>
-                    <h3 style="margin-bottom: 15px;">Targeted Infusions</h3>
-                    <p class="text-muted">Biomarker-matched chemotherapy and immunotherapy formulated on-site for optimal tumor targeting and tolerability.</p>
-                </div>
-                <div
-                    style="padding: 40px; border: 1px solid var(--border-color); border-radius: 12px; text-align: left; background: var(--bg-card); transition: var(--transition); box-shadow: var(--shadow-sm);">
-                    <i class="fa-solid fa-calendar-check"
-                        style="font-size: 2.5rem; color: var(--secondary); margin-bottom: 20px;"></i>
-                    <h3 style="margin-bottom: 15px;">Treatment Schedules</h3>
-                    <p class="text-muted">Transparent tracking of infusion cycles, recovery days, blood count checks, and oncology follow-up consultations.</p>
-                </div>
-                <div
-                    style="padding: 40px; border: 1px solid var(--border-color); border-radius: 12px; text-align: left; background: var(--bg-card); transition: var(--transition); box-shadow: var(--shadow-sm);">
-                    <i class="fa-solid fa-user-doctor"
-                        style="font-size: 2.5rem; color: var(--accent-dark); margin-bottom: 20px;"></i>
-                    <h3 style="margin-bottom: 15px;">Nurse Navigators</h3>
-                    <p class="text-muted">Dedicated clinical navigators to answer questions, manage symptom flares, and guide insurance approvals seamlessly.</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Feature Section: Infusion Suites -->
-    <section class="section" style="background-color: var(--bg-gray); padding: 90px 0;">
-        <div class="container">
-            <div class="care-feature-grid">
-                <div class="care-feature-visual">
-                    <img src="img/chemo_suite.jpg" alt="Cancer Infusion Suite" style="width: 100%; height: auto; object-fit: cover;">
-                </div>
-                <div class="care-feature-content">
-                    <h2>Heated Infusion Suites Built for Serenity</h2>
-                    <p style="margin-bottom: 1.5rem; color: var(--text-muted); font-size: 1.1rem; line-height: 1.7;">
-                        Chemotherapy treatment should never feel institutional. Our center features private and semi-private bays filled with warm sunlight, peaceful garden views, and medical amenities engineered for relaxation.
+            <div class="home2-programs-grid">
+                <!-- Program 1 -->
+                <div class="home2-program-card">
+                    <div class="home2-program-icon" style="background: rgba(13, 118, 133, 0.1); color: var(--primary);">
+                        <i class="fa-solid fa-vial-virus"></i>
+                    </div>
+                    <h3 style="font-size: 1.25rem; margin-bottom: 10px;">Medical Oncology & Infusion</h3>
+                    <p class="text-muted" style="font-size: 0.95rem; line-height: 1.6; flex-grow: 1;">
+                        Personalized chemotherapy, immunotherapy (checkpoint inhibitors), antibody-drug conjugates, and targeted kinase inhibitors compounded on-site in cleanroom labs.
                     </p>
-                    <ul class="text-muted" style="margin-bottom: 2rem;">
-                        <li style="margin-bottom: 10px;"><i class="fa-solid fa-check-circle"
-                                style="color: var(--primary);"></i> Heated memory foam recliners with massage capability</li>
-                        <li style="margin-bottom: 10px;"><i class="fa-solid fa-check-circle"
-                                style="color: var(--primary);"></i> Dignicap and Paxman scalp cooling systems to preserve hair</li>
-                        <li style="margin-bottom: 10px;"><i class="fa-solid fa-check-circle"
-                                style="color: var(--primary);"></i> HEPA-filtered clean air environment for immunocompromised care</li>
-                        <li style="margin-bottom: 10px;"><i class="fa-solid fa-check-circle"
-                                style="color: var(--primary);"></i> Oncology Certified Nurse (OCN) bedside accompaniment</li>
-                    </ul>
-                    <a href="services.html#chemo" class="btn btn-outline">Explore Infusion Amenities</a>
+                    <div class="home2-program-tags">
+                        <span class="home2-program-tag">Immunotherapy</span>
+                        <span class="home2-program-tag">Targeted Biologics</span>
+                        <span class="home2-program-tag">Scalp Cooling</span>
+                    </div>
+                    <a href="services.html#chemo" style="color: var(--primary); font-weight: 700; font-size: 0.95rem; display: inline-flex; align-items: center; gap: 6px; margin-top: 10px;">
+                        Explore Infusion Protocols <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Program 2 -->
+                <div class="home2-program-card">
+                    <div class="home2-program-icon" style="background: rgba(225, 29, 72, 0.1); color: var(--secondary);">
+                        <i class="fa-solid fa-radiation"></i>
+                    </div>
+                    <h3 style="font-size: 1.25rem; margin-bottom: 10px;">Precision Radiation Oncology</h3>
+                    <p class="text-muted" style="font-size: 0.95rem; line-height: 1.6; flex-grow: 1;">
+                        Sub-millimeter targeting with Stereotactic Body Radiotherapy (SBRT), Image-Guided Radiation (IGRT), and proton beam coordination to spare healthy tissue.
+                    </p>
+                    <div class="home2-program-tags">
+                        <span class="home2-program-tag">SBRT & SRS</span>
+                        <span class="home2-program-tag">Proton Alignment</span>
+                        <span class="home2-program-tag">Motion Tracking</span>
+                    </div>
+                    <a href="services.html#radiation" style="color: var(--secondary); font-weight: 700; font-size: 0.95rem; display: inline-flex; align-items: center; gap: 6px; margin-top: 10px;">
+                        Radiation Coordination <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Program 3 -->
+                <div class="home2-program-card">
+                    <div class="home2-program-icon" style="background: rgba(245, 158, 11, 0.1); color: var(--accent-dark);">
+                        <i class="fa-solid fa-dna"></i>
+                    </div>
+                    <h3 style="font-size: 1.25rem; margin-bottom: 10px;">Genomics & Precision Trials</h3>
+                    <p class="text-muted" style="font-size: 0.95rem; line-height: 1.6; flex-grow: 1;">
+                        Next-Generation Sequencing (NGS) of 500+ cancer-related genes, liquid biopsy circulating tumor DNA assays, and enrollment in pioneering phase I-III trials.
+                    </p>
+                    <div class="home2-program-tags">
+                        <span class="home2-program-tag">NGS Profiling</span>
+                        <span class="home2-program-tag">Liquid Biopsy</span>
+                        <span class="home2-program-tag">Phase I-III Trials</span>
+                    </div>
+                    <a href="services.html#immunotherapy" style="color: var(--accent-dark); font-weight: 700; font-size: 0.95rem; display: inline-flex; align-items: center; gap: 6px; margin-top: 10px;">
+                        Genomics & Trials <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Program 4 -->
+                <div class="home2-program-card">
+                    <div class="home2-program-icon" style="background: rgba(16, 185, 129, 0.1); color: #059669;">
+                        <i class="fa-solid fa-droplet"></i>
+                    </div>
+                    <h3 style="font-size: 1.25rem; margin-bottom: 10px;">Hematologic Malignancies</h3>
+                    <p class="text-muted" style="font-size: 0.95rem; line-height: 1.6; flex-grow: 1;">
+                        Dedicated blood cancer disease teams managing Lymphoma (Hodgkin & Non-Hodgkin), Multiple Myeloma, Leukemia, and cellular therapy transitions.
+                    </p>
+                    <div class="home2-program-tags">
+                        <span class="home2-program-tag">Lymphoma Care</span>
+                        <span class="home2-program-tag">Myeloma Staging</span>
+                        <span class="home2-program-tag">CAR-T Navigation</span>
+                    </div>
+                    <a href="services.html" style="color: #059669; font-weight: 700; font-size: 0.95rem; display: inline-flex; align-items: center; gap: 6px; margin-top: 10px;">
+                        Hematology Details <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Program 5 -->
+                <div class="home2-program-card">
+                    <div class="home2-program-icon" style="background: rgba(147, 51, 234, 0.1); color: #9333ea;">
+                        <i class="fa-solid fa-user-nurse"></i>
+                    </div>
+                    <h3 style="font-size: 1.25rem; margin-bottom: 10px;">Nurse Navigator Advocacy</h3>
+                    <p class="text-muted" style="font-size: 0.95rem; line-height: 1.6; flex-grow: 1;">
+                        Your continuous point of contact who coordinates multi-specialist consultations, facilitates prior authorizations, and provides proactive symptom triage.
+                    </p>
+                    <div class="home2-program-tags">
+                        <span class="home2-program-tag">1-on-1 Nurse</span>
+                        <span class="home2-program-tag">Insurance Help</span>
+                        <span class="home2-program-tag">Appt Scheduling</span>
+                    </div>
+                    <a href="about.html" style="color: #9333ea; font-weight: 700; font-size: 0.95rem; display: inline-flex; align-items: center; gap: 6px; margin-top: 10px;">
+                        Meet Our Navigators <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Program 6 -->
+                <div class="home2-program-card">
+                    <div class="home2-program-icon" style="background: rgba(14, 165, 233, 0.1); color: #0ea5e9;">
+                        <i class="fa-solid fa-heart-pulse"></i>
+                    </div>
+                    <h3 style="font-size: 1.25rem; margin-bottom: 10px;">Survivorship & Integrative Care</h3>
+                    <p class="text-muted" style="font-size: 0.95rem; line-height: 1.6; flex-grow: 1;">
+                        Whole-person rehabilitation encompassing certified lymphedema therapy, clinical psycho-oncology, oncology dietitian meal planning, and survivor support circles.
+                    </p>
+                    <div class="home2-program-tags">
+                        <span class="home2-program-tag">Lymphedema Care</span>
+                        <span class="home2-program-tag">Psycho-Oncology</span>
+                        <span class="home2-program-tag">Cancer Nutrition</span>
+                    </div>
+                    <a href="services.html#survivorship" style="color: #0ea5e9; font-weight: 700; font-size: 0.95rem; display: inline-flex; align-items: center; gap: 6px; margin-top: 10px;">
+                        Survivorship Services <i class="fa-solid fa-arrow-right"></i>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 4-Step Patient Journey Pathway Section -->
-    <section class="section care-journey-section" style="padding: 90px 0;">
+    <!-- 4. Interactive 4-Step Patient Journey Pathway -->
+    <section class="section care-journey-section" style="background-color: var(--bg-gray); padding: 90px 0;">
         <div class="container">
             <div class="section-header text-center">
                 <span class="badge" style="background: rgba(13, 118, 133, 0.12); color: var(--primary); padding: 8px 16px; border-radius: 30px; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px; display: inline-block;">
@@ -248,7 +444,7 @@
             </div>
 
             <!-- Pathway CTA Banner -->
-            <div class="care-pathway-banner">
+            <div class="care-pathway-banner" style="margin-top: 40px;">
                 <div class="pathway-banner-text">
                     <h3 style="font-size: 1.35rem; margin-bottom: 6px; color: var(--text-main);">Have questions about your care pathway?</h3>
                     <p class="text-muted" style="margin-bottom: 0; font-size: 0.95rem;">Our lead oncology nurse navigators are available to assist you and your family.</p>
@@ -261,43 +457,409 @@
         </div>
     </section>
 
-    <!-- Feature Section: Precision Tracking -->
-    <section class="section sanctuary-section" style="background-color: var(--bg-gray); padding: 90px 0;">
+    <!-- 5. Interactive Second Opinion & Fast-Track Triage Advisor -->
+    <section class="section" id="home2-second-opinion" style="padding: 90px 0;">
         <div class="container">
-            <div class="care-feature-grid">
-                <div class="care-feature-visual">
-                    <img src="img/radiation_tech.jpg" alt="Precision Cancer Care" style="width: 100%; height: auto; object-fit: cover;">
-                </div>
-                <div class="care-feature-content">
-                    <span class="badge"
-                        style="background: rgba(13, 118, 133, 0.12); color: var(--primary); padding: 8px 15px; border-radius: 30px; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; display: inline-block;">
-                        PATIENT PORTAL
+            <div class="home2-opinion-box">
+                <div class="section-header text-center" style="margin-bottom: 30px;">
+                    <span class="badge" style="background: rgba(225, 29, 72, 0.1); color: var(--secondary); padding: 8px 16px; border-radius: 30px; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; display: inline-block;">
+                        <i class="fa-solid fa-clipboard-check"></i> FAST-TRACK ASSESSMENT
                     </span>
-                    <h2>The Digital <span style="color: var(--primary);">Care Companion</span></h2>
-                    <p class="text-muted" style="font-size: 1.15rem; line-height: 1.7; margin-bottom: 30px;">
-                        Stay in control of your treatment schedule, review clinical notes, manage anti-nausea medications, and view upcoming appointments in our secure patient portal.
+                    <h2 style="font-size: clamp(1.8rem, 2.8vw, 2.4rem); margin-bottom: 10px;">Interactive Second Opinion Advisor</h2>
+                    <p class="text-muted" style="max-width: 650px; margin: 0 auto; font-size: 1.05rem;">
+                        Select your current clinical stage to receive instant guidance on records required, tumor board matching, and consultation scheduling.
                     </p>
+                </div>
 
-                    <ul style="margin-bottom: 40px;">
-                        <li style="margin-bottom: 20px; display: flex; align-items: flex-start; gap: 15px;">
-                            <i class="fa-solid fa-calendar-days"
-                                style="color: var(--primary); font-size: 1.5rem; margin-top: 5px;"></i>
-                            <div>
-                                <span style="font-weight: 700; display: block;">Treatment Cycle Tracking</span>
-                                <span class="text-muted">Real-time status of current cycle progress, infusion dates, and lab check intervals.</span>
-                            </div>
-                        </li>
-                        <li style="margin-bottom: 20px; display: flex; align-items: flex-start; gap: 15px;">
-                            <i class="fa-solid fa-pills"
-                                style="color: var(--secondary); font-size: 1.5rem; margin-top: 5px;"></i>
-                            <div>
-                                <span style="font-weight: 700; display: block;">Medication Reminders</span>
-                                <span class="text-muted">Timely daily alerts for supportive anti-emetics, prophylactic medicines, and hydration.</span>
-                            </div>
-                        </li>
-                    </ul>
+                <div class="home2-steps-indicator">
+                    <div class="home2-step-pill active" id="stepPill1" onclick="switchOpinionStep(1)">
+                        <i class="fa-solid fa-1"></i> Diagnosis Stage
+                    </div>
+                    <div class="home2-step-pill" id="stepPill2" onclick="switchOpinionStep(2)">
+                        <i class="fa-solid fa-2"></i> Records Checklist
+                    </div>
+                    <div class="home2-step-pill" id="stepPill3" onclick="switchOpinionStep(3)">
+                        <i class="fa-solid fa-3"></i> Matched Specialist
+                    </div>
+                </div>
 
-                    <a href="dashboard.html" class="btn btn-primary">Open Patient Dashboard</a>
+                <!-- Step 1 Content -->
+                <div id="opinionStep1">
+                    <div class="home2-stage-grid">
+                        <div class="home2-stage-card" onclick="selectStage('Newly Diagnosed')" role="button" tabindex="0">
+                            <span class="stage-num">STAGE 01</span>
+                            <h4>Newly Diagnosed</h4>
+                            <p>Seeking initial comprehensive staging, biomarker workup, and treatment roadmap.</p>
+                        </div>
+                        <div class="home2-stage-card" onclick="selectStage('Second Opinion')" role="button" tabindex="0">
+                            <span class="stage-num">STAGE 02</span>
+                            <h4>Second Opinion</h4>
+                            <p>Confirming biopsy pathology and comparing clinical treatment alternatives.</p>
+                        </div>
+                        <div class="home2-stage-card" onclick="selectStage('Active Chemotherapy')" role="button" tabindex="0">
+                            <span class="stage-num">STAGE 03</span>
+                            <h4>Active Therapy Transfer</h4>
+                            <p>Transferring ongoing infusions, immunotherapy, or radiation closer to home.</p>
+                        </div>
+                        <div class="home2-stage-card" onclick="selectStage('Recurrence Evaluation')" role="button" tabindex="0">
+                            <span class="stage-num">STAGE 04</span>
+                            <h4>Recurrence Evaluation</h4>
+                            <p>Exploring novel clinical trials, NGS analysis, and next-line targeted regimens.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2 Content -->
+                <div id="opinionStep2" style="display: none;">
+                    <div style="background: var(--bg-gray); border-radius: 14px; padding: 28px; border: 1px solid var(--border-color);">
+                        <h4 style="margin-bottom: 14px; color: var(--text-main);"><i class="fa-solid fa-list-check" style="color: var(--primary); margin-right: 8px;"></i> Recommended Records for Expedited Review</h4>
+                        <p class="text-muted" style="margin-bottom: 20px; font-size: 0.95rem;">Having these records ready enables our tumor board specialists to review your case within 24–48 hours:</p>
+                        <ul style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; margin-bottom: 24px;">
+                            <li style="display: flex; align-items: center; gap: 10px; font-weight: 500;"><i class="fa-solid fa-circle-check" style="color: var(--primary);"></i> Recent Pathology & Biopsy Reports</li>
+                            <li style="display: flex; align-items: center; gap: 10px; font-weight: 500;"><i class="fa-solid fa-circle-check" style="color: var(--primary);"></i> CT / PET / MRI Imaging Discs</li>
+                            <li style="display: flex; align-items: center; gap: 10px; font-weight: 500;"><i class="fa-solid fa-circle-check" style="color: var(--primary);"></i> Genomic / NGS Biomarker Profiles</li>
+                            <li style="display: flex; align-items: center; gap: 10px; font-weight: 500;"><i class="fa-solid fa-circle-check" style="color: var(--primary);"></i> Current Oncology Medication History</li>
+                        </ul>
+                        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                            <button type="button" class="btn btn-outline" style="padding: 10px 22px; border-radius: 30px;" onclick="switchOpinionStep(1)">
+                                <i class="fa-solid fa-arrow-left" style="margin-right: 6px;"></i> Back
+                            </button>
+                            <button type="button" class="btn btn-primary" style="padding: 10px 24px; border-radius: 30px;" onclick="switchOpinionStep(3)">
+                                View Matched Care Specialist <i class="fa-solid fa-arrow-right" style="margin-left: 6px;"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3 Content -->
+                <div id="opinionStep3" style="display: none;">
+                    <div class="opinion-result-box active" style="display: block; background: var(--bg-gray); border: 1.5px dashed var(--primary); border-radius: 14px; padding: 28px;">
+                        <div style="display: flex; align-items: center; gap: 22px; flex-wrap: wrap;">
+                            <img src="img/sarah_lin.jpg" alt="Sarah Lin Lead Nurse Navigator" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 3px solid var(--primary); flex-shrink: 0;">
+                            <div style="flex-grow: 1; min-width: 250px;">
+                                <span class="badge" style="background: rgba(13, 118, 133, 0.12); color: var(--primary); padding: 4px 12px; border-radius: 12px; font-size: 0.78rem; font-weight: 700; margin-bottom: 8px; display: inline-block;">FAST-TRACK INTAKE</span>
+                                <h4 style="margin-bottom: 6px; color: var(--text-main);">Nurse Navigator Assigned: Sarah Lin, MSN, RN, OCN</h4>
+                                <p class="text-muted" style="margin-bottom: 0; font-size: 0.93rem; line-height: 1.55;">
+                                    Your case profile has been routed to our fast-track intake coordination queue. Average nurse response: <strong style="color: var(--primary);">under 2 hours</strong>.
+                                </p>
+                            </div>
+                            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                                <button type="button" class="btn btn-outline" style="padding: 10px 20px; border-radius: 30px;" onclick="switchOpinionStep(2)">
+                                    <i class="fa-solid fa-arrow-left" style="margin-right: 6px;"></i> Back
+                                </button>
+                                <a href="contact.html" class="btn btn-primary" style="padding: 12px 26px; border-radius: 30px;">Submit Consultation Request</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Facilities & Healing Sanctuary Showcase -->
+    <section class="section" style="background-color: var(--bg-gray); padding: 90px 0;">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="badge" style="background: rgba(13, 118, 133, 0.12); color: var(--primary); padding: 8px 16px; border-radius: 30px; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px; display: inline-block;">
+                    <i class="fa-solid fa-building-shield"></i> WORLD-CLASS INFRASTRUCTURE
+                </span>
+                <h2 style="font-size: clamp(2rem, 3vw, 2.6rem); margin-bottom: 15px;">Designed for Healing & Clinical Precision</h2>
+                <p class="text-muted" style="max-width: 680px; margin: 0 auto; font-size: 1.1rem; line-height: 1.6;">
+                    Every square foot of our cancer care center is purposefully engineered to minimize stress, prevent hospital-acquired infection, and foster tranquility.
+                </p>
+            </div>
+
+            <div class="home2-facilities-grid">
+                <!-- Facility 1 -->
+                <div class="home2-facility-card">
+                    <img src="img/chemo_suite.jpg" alt="Cancer Infusion Suite" class="home2-facility-img">
+                    <div class="home2-facility-content">
+                        <span class="badge" style="background: rgba(13, 118, 133, 0.12); color: var(--primary); margin-bottom: 10px; display: inline-block;">INFUSION SUITES</span>
+                        <h3 style="font-size: 1.3rem; margin-bottom: 10px;">Heated Memory Foam Infusion Bays</h3>
+                        <p class="text-muted" style="font-size: 0.95rem; line-height: 1.6; margin-bottom: 15px;">
+                            Private and semi-private bays with panoramic garden views, personal entertainment tablets, automated infusion pumps, and certified oncology nurse bedside support.
+                        </p>
+                        <ul style="font-size: 0.9rem; color: var(--text-muted); display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+                            <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Paxman Scalp Cooling</li>
+                            <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> HEPA Filtered Air</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Facility 2 -->
+                <div class="home2-facility-card">
+                    <img src="img/radiation_tech.jpg" alt="Linear Accelerator Radiation Tech" class="home2-facility-img">
+                    <div class="home2-facility-content">
+                        <span class="badge" style="background: rgba(225, 29, 72, 0.1); color: var(--secondary); margin-bottom: 10px; display: inline-block;">PRECISION TECH</span>
+                        <h3 style="font-size: 1.3rem; margin-bottom: 10px;">Image-Guided Linear Accelerator Suites</h3>
+                        <p class="text-muted" style="font-size: 0.95rem; line-height: 1.6; margin-bottom: 15px;">
+                            Advanced 4D cone-beam CT guidance delivering stereotactic body radiotherapy (SBRT) with sub-millimeter tumor accuracy, reducing overall treatment sessions.
+                        </p>
+                        <ul style="font-size: 0.9rem; color: var(--text-muted); display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+                            <li><i class="fa-solid fa-check" style="color: var(--secondary);"></i> Respiratory Gating</li>
+                            <li><i class="fa-solid fa-check" style="color: var(--secondary);"></i> 3D Tumor Mapping</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Live Impact & Clinical Metric Counters -->
+    <section class="home2-stats-strip">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px;">
+                <div class="home2-stat-box">
+                    <div class="home2-stat-number">12,500+</div>
+                    <div class="home2-stat-label">Infusions Administered</div>
+                    <div class="home2-stat-sub">Zero critical medication error rate</div>
+                </div>
+                <div class="home2-stat-box">
+                    <div class="home2-stat-number">&lt; 48 Hrs</div>
+                    <div class="home2-stat-label">Rapid Intake Window</div>
+                    <div class="home2-stat-sub">From diagnosis to specialist review</div>
+                </div>
+                <div class="home2-stat-box">
+                    <div class="home2-stat-number">98.8%</div>
+                    <div class="home2-stat-label">Patient Satisfaction</div>
+                    <div class="home2-stat-sub">Verified patient & family trust rating</div>
+                </div>
+                <div class="home2-stat-box">
+                    <div class="home2-stat-number">40+</div>
+                    <div class="home2-stat-label">Active Clinical Trials</div>
+                    <div class="home2-stat-sub">Targeted biomarker & immunotherapy trials</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. Tumor Board Leaders Spotlight -->
+    <section class="section" id="home2-specialists" style="padding: 90px 0;">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="badge" style="background: rgba(13, 118, 133, 0.12); color: var(--primary); padding: 8px 16px; border-radius: 30px; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px; display: inline-block;">
+                    <i class="fa-solid fa-user-doctor"></i> EXPERT MULTIDISCIPLINARY TEAM
+                </span>
+                <h2 style="font-size: clamp(2rem, 3vw, 2.6rem); margin-bottom: 15px;">Meet Our Lead Oncologists</h2>
+                <p class="text-muted" style="max-width: 680px; margin: 0 auto; font-size: 1.1rem; line-height: 1.6;">
+                    Board-certified medical, surgical, and radiation oncology specialists collaborating in dedicated weekly tumor board conferences.
+                </p>
+            </div>
+
+            <div class="home2-specialists-grid">
+                <!-- Specialist 1 -->
+                <div class="home2-doctor-card">
+                    <img src="img/sarah_lin.jpg" alt="Dr. Elena Vance" class="home2-doctor-img">
+                    <div class="home2-doctor-info">
+                        <span style="color: var(--primary); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; margin-bottom: 4px;">Chief Medical Oncologist</span>
+                        <h4 style="font-size: 1.2rem; margin-bottom: 6px; color: var(--text-main);">Dr. Elena Vance, MD</h4>
+                        <p class="text-muted" style="font-size: 0.88rem; line-height: 1.5; margin-bottom: 15px; flex-grow: 1;">
+                            Specializing in breast & gynecologic cancers, immunotherapy response monitoring, and precision biomarker therapy.
+                        </p>
+                        <a href="contact.html" class="btn btn-outline" style="font-size: 0.85rem; padding: 8px 14px; text-align: center;">Book Consultation</a>
+                    </div>
+                </div>
+
+                <!-- Specialist 2 -->
+                <div class="home2-doctor-card">
+                    <img src="img/radiation_tech.jpg" alt="Dr. Arthur Chen" class="home2-doctor-img">
+                    <div class="home2-doctor-info">
+                        <span style="color: var(--secondary); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; margin-bottom: 4px;">Genomics & Precision Trials</span>
+                        <h4 style="font-size: 1.2rem; margin-bottom: 6px; color: var(--text-main);">Dr. Arthur Chen, MD, PhD</h4>
+                        <p class="text-muted" style="font-size: 0.88rem; line-height: 1.5; margin-bottom: 15px; flex-grow: 1;">
+                            Leading our Next-Gen sequencing laboratory and matching refractory patients with novel targeted phase I/II trial protocols.
+                        </p>
+                        <a href="contact.html" class="btn btn-outline" style="font-size: 0.85rem; padding: 8px 14px; text-align: center;">Book Consultation</a>
+                    </div>
+                </div>
+
+                <!-- Specialist 3 -->
+                <div class="home2-doctor-card">
+                    <img src="img/featured_story.png" alt="Sarah Lin MSN OCN" class="home2-doctor-img">
+                    <div class="home2-doctor-info">
+                        <span style="color: var(--accent-dark); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; margin-bottom: 4px;">Lead Nurse Navigator</span>
+                        <h4 style="font-size: 1.2rem; margin-bottom: 6px; color: var(--text-main);">Sarah Lin, MSN, RN, OCN</h4>
+                        <p class="text-muted" style="font-size: 0.88rem; line-height: 1.5; margin-bottom: 15px; flex-grow: 1;">
+                            Over 14 years dedicated to oncology triage, patient emotional support, and rapid appointment coordination across specialists.
+                        </p>
+                        <a href="contact.html" class="btn btn-outline" style="font-size: 0.85rem; padding: 8px 14px; text-align: center;">Book Consultation</a>
+                    </div>
+                </div>
+
+                <!-- Specialist 4 -->
+                <div class="home2-doctor-card">
+                    <img src="img/chemo_suite.jpg" alt="Dr. Marcus Reynolds" class="home2-doctor-img">
+                    <div class="home2-doctor-info">
+                        <span style="color: #059669; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; margin-bottom: 4px;">Radiation Oncologist</span>
+                        <h4 style="font-size: 1.2rem; margin-bottom: 6px; color: var(--text-main);">Dr. Marcus Reynolds, MD</h4>
+                        <p class="text-muted" style="font-size: 0.88rem; line-height: 1.5; margin-bottom: 15px; flex-grow: 1;">
+                            Expert in SBRT and stereotactic radiosurgery for lung, brain, and prostate tumors with tissue-sparing precision algorithms.
+                        </p>
+                        <a href="contact.html" class="btn btn-outline" style="font-size: 0.85rem; padding: 8px 14px; text-align: center;">Book Consultation</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. Survivor Stories & Caregiver Voices -->
+    <section class="section" style="background-color: var(--bg-gray); padding: 90px 0;">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="badge" style="background: rgba(13, 118, 133, 0.12); color: var(--primary); padding: 8px 16px; border-radius: 30px; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px; display: inline-block;">
+                    <i class="fa-solid fa-comment-medical"></i> VOICES OF HEALING
+                </span>
+                <h2 style="font-size: clamp(2rem, 3vw, 2.6rem); margin-bottom: 15px;">Real Stories of Hope & Remission</h2>
+                <p class="text-muted" style="max-width: 680px; margin: 0 auto; font-size: 1.1rem; line-height: 1.6;">
+                    Hear how our integrated clinical approach, heated infusion amenities, and nurse navigator advocacy made all the difference.
+                </p>
+            </div>
+
+            <div class="home2-stories-grid">
+                <!-- Story 1 -->
+                <div class="card" style="background: var(--bg-card); border: 1px solid var(--border-color); padding: 30px; border-radius: 16px;">
+                    <div style="color: var(--accent); margin-bottom: 14px;">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p style="font-style: italic; color: var(--text-main); font-size: 0.98rem; line-height: 1.6; margin-bottom: 20px;">
+                        "The scalp cooling protocol saved over 80% of my hair during 12 cycles of chemo. Dr. Vance and the infusion nursing team treated me like family from day one."
+                    </p>
+                    <div style="display: flex; align-items: center; gap: 14px;">
+                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Elena R." style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 2px solid var(--primary);">
+                        <div>
+                            <strong style="display: block; color: var(--text-main);">Elena R.</strong>
+                            <span class="text-muted" style="font-size: 0.82rem;">Breast Cancer Survivor • 3 Years Remission</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Story 2 -->
+                <div class="card" style="background: var(--bg-card); border: 1px solid var(--border-color); padding: 30px; border-radius: 16px;">
+                    <div style="color: var(--accent); margin-bottom: 14px;">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p style="font-style: italic; color: var(--text-main); font-size: 0.98rem; line-height: 1.6; margin-bottom: 20px;">
+                        "When my stage III diagnosis seemed grim, their tumor board matched me to a targeted immunotherapy regimen. The patient portal kept every cycle transparent and stress-free."
+                    </p>
+                    <div style="display: flex; align-items: center; gap: 14px;">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="David K." style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 2px solid var(--secondary);">
+                        <div>
+                            <strong style="display: block; color: var(--text-main);">David K.</strong>
+                            <span class="text-muted" style="font-size: 0.82rem;">Colorectal Cancer Survivor • In Remission</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Story 3 -->
+                <div class="card" style="background: var(--bg-card); border: 1px solid var(--border-color); padding: 30px; border-radius: 16px;">
+                    <div style="color: var(--accent); margin-bottom: 14px;">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p style="font-style: italic; color: var(--text-main); font-size: 0.98rem; line-height: 1.6; margin-bottom: 20px;">
+                        "As a daughter managing my father's care, the 24/7 oncology triage line was a lifesaver. Whenever fever or nausea struck at 2 AM, an oncology nurse gave us immediate clarity."
+                    </p>
+                    <div style="display: flex; align-items: center; gap: 14px;">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Grace T." style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 2px solid var(--accent-dark);">
+                        <div>
+                            <strong style="display: block; color: var(--text-main);">Grace T.</strong>
+                            <span class="text-muted" style="font-size: 0.82rem;">Family Caregiver & Patient Advocate</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. Frequently Asked Questions & Insurance Navigation -->
+    <section class="section" id="home2-faq" style="padding: 90px 0;">
+        <div class="container" style="max-width: 860px;">
+            <div class="section-header text-center">
+                <span class="badge" style="background: rgba(13, 118, 133, 0.12); color: var(--primary); padding: 8px 16px; border-radius: 30px; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px; display: inline-block;">
+                    <i class="fa-solid fa-circle-question"></i> COMMON PATIENT QUESTIONS
+                </span>
+                <h2 style="font-size: clamp(2rem, 3vw, 2.6rem); margin-bottom: 15px;">Frequently Asked Questions</h2>
+                <p class="text-muted" style="font-size: 1.05rem; line-height: 1.6;">
+                    Clear guidance on consultations, insurance coverage, treatment schedules, and supportive services.
+                </p>
+            </div>
+
+            <div class="faq-container">
+                <!-- FAQ 1 -->
+                <div class="faq-item active">
+                    <button class="faq-header" aria-expanded="true">
+                        <span>How quickly can I be seen for a new cancer diagnosis or second opinion?</span>
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-content">
+                        <p>We prioritize all new oncology referrals and second opinions with our <strong>48-Hour Priority Intake Guarantee</strong>. You will be matched with a dedicated oncology nurse navigator who collects your records, schedules initial imaging or lab tests, and confirms your multi-specialist appointment within two business days.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="faq-item">
+                    <button class="faq-header" aria-expanded="false">
+                        <span>Does health insurance cover genomic biomarker profiling and clinical trials?</span>
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-content">
+                        <p>Most major private insurance plans, Medicare, and Medicare Advantage cover Next-Generation Sequencing (NGS) and biomarker testing when medically indicated. For clinical trials, routine patient care costs are covered by insurance under federal mandates, while investigational drugs are typically provided at no cost by trial sponsors.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="faq-item">
+                    <button class="faq-header" aria-expanded="false">
+                        <span>What happens during a multidisciplinary tumor board review?</span>
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-content">
+                        <p>Our tumor board brings together medical oncologists, radiation oncologists, surgical oncologists, molecular pathologists, and radiologists. Together, they review your diagnostic imaging, pathology slides, and genomic markers collaboratively to reach a unanimous consensus on the most effective treatment protocol.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="faq-item">
+                    <button class="faq-header" aria-expanded="false">
+                        <span>Can a family member or caregiver accompany me to chemotherapy infusions?</span>
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-content">
+                        <p>Yes. Our private and semi-private infusion suites are designed to comfortably accommodate you and a caregiver. Each suite includes companion seating, Wi-Fi, heated blankets, and complimentary refreshments to ensure both patient and loved one feel supported.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 5 -->
+                <div class="faq-item">
+                    <button class="faq-header" aria-expanded="false">
+                        <span>How do scalp cooling systems help prevent hair loss during chemotherapy?</span>
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-content">
+                        <p>Scalp cooling systems (such as Paxman and DigniCap) gently reduce the temperature of the scalp before, during, and after chemotherapy infusion. This constricts blood vessels in hair follicles, significantly reducing the amount of chemotherapy drug reaching them and substantially lowering hair loss rates.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 11. High-Impact Closing CTA Banner -->
+    <section class="section" id="home2-cta" style="padding: 0 0 90px 0;">
+        <div class="container">
+            <div class="ready-cta-box" style="background: linear-gradient(135deg, rgba(8, 80, 91, 0.92), rgba(11, 19, 30, 0.95)), url('img/newsletter_bg.png') center/cover no-repeat; color: white; padding: 60px 40px; border-radius: 24px; text-align: center; border: 1px solid rgba(255,255,255,0.15); box-shadow: var(--shadow-lg);">
+                <span class="badge" style="background: rgba(255, 255, 255, 0.2); color: white; padding: 6px 16px; border-radius: 20px; font-weight: 700; margin-bottom: 20px; display: inline-block;">
+                    <i class="fa-solid fa-ribbon"></i> COMPASSIONATE CARE AWAITS
+                </span>
+                <h2 style="color: white; font-size: clamp(2rem, 3.2vw, 2.8rem); margin-bottom: 18px;">Begin Your Care Journey with Confidence</h2>
+                <p style="color: rgba(255, 255, 255, 0.9); max-width: 680px; margin: 0 auto 32px auto; font-size: 1.15rem; line-height: 1.7;">
+                    Speak with an oncology nurse navigator today to schedule your priority consultation, review treatment records, or access your secure patient portal.
+                </p>
+                <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+                    <a href="contact.html" class="btn btn-secondary" style="padding: 16px 36px; font-size: 1.05rem; border-radius: 50px;">
+                        Schedule Priority Consultation
+                    </a>
+                    <a href="dashboard.html" class="btn btn-outline" style="padding: 16px 36px; font-size: 1.05rem; border-radius: 50px; border-color: white; color: white; background: rgba(255,255,255,0.1);">
+                        Open Patient Portal
+                    </a>
                 </div>
             </div>
         </div>
@@ -313,7 +875,7 @@
                         <i class="logo-icon"><i class="fa-solid fa-ribbon"></i></i> Oncura
                     </a>
                     <p class="text-muted" style="margin-bottom: 20px;">
-                        Specialized cancer care, modern chemotherapy infusion suites, radiation coordination, and lifelong survivorship support.
+                        Specialized cancer care, modern chemotherapy infusion suites, precision radiation coordination, and lifelong survivorship support.
                     </p>
                     <div class="footer-social">
                         <a href="#"><i class="fa-brands fa-facebook"></i></a>
@@ -328,6 +890,7 @@
                     <h4>Quick Links</h4>
                     <ul class="footer-links">
                         <li><a href="index.html">Home</a></li>
+                        <li><a href="home2.html">Home 2</a></li>
                         <li><a href="about.html">Our Team</a></li>
                         <li><a href="services.html">Services</a></li>
                         <li><a href="blog.html">Patient Resources</a></li>
@@ -368,6 +931,27 @@
     </footer>
 
     <script src="js/main.js"></script>
+    <script>
+        // Interactive Second Opinion Advisor Wizard logic
+        function switchOpinionStep(stepNumber) {
+            document.querySelectorAll('.home2-step-pill').forEach(pill => pill.classList.remove('active'));
+            const pill = document.getElementById('stepPill' + stepNumber);
+            if (pill) pill.classList.add('active');
+
+            document.getElementById('opinionStep1').style.display = stepNumber === 1 ? 'block' : 'none';
+            document.getElementById('opinionStep2').style.display = stepNumber === 2 ? 'block' : 'none';
+            document.getElementById('opinionStep3').style.display = stepNumber === 3 ? 'block' : 'none';
+        }
+
+        function selectStage(stageName) {
+            switchOpinionStep(2);
+        }
+
+        function selectChip(element) {
+            document.querySelectorAll('.home2-chip').forEach(c => c.classList.remove('active'));
+            element.classList.add('active');
+        }
+    </script>
 </body>
 
 </html>

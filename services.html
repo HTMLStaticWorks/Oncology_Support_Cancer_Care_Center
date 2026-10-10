@@ -36,7 +36,7 @@
             </button>
         </div>
         <a href="index.html" class="mobile-link">Home</a>
-        <a href="home2.html" class="mobile-link">Care</a>
+        <a href="home2.html" class="mobile-link">Home 2</a>
         <a href="about.html" class="mobile-link">Team</a>
         <a href="services.html" class="mobile-link active">Services</a>
         <a href="blog.html" class="mobile-link">Resources</a>
@@ -62,7 +62,7 @@
             </a>
             <nav class="nav-menu">
                 <a href="index.html" class="nav-link">Home</a>
-                <a href="home2.html" class="nav-link">Care</a>
+                <a href="home2.html" class="nav-link">Home 2</a>
                 <a href="about.html" class="nav-link">Team</a>
                 <a href="services.html" class="nav-link active">Services</a>
                 <a href="blog.html" class="nav-link">Resources</a>
@@ -78,49 +78,152 @@
         </div>
     </header>
 
-    <!-- Header Section -->
-    <section class="services-hero" style="background: linear-gradient(135deg, rgba(13, 118, 133, 0.95), rgba(8, 80, 91, 0.95)); padding: 120px 0 80px;">
+    <!-- 1. Services Hero Section -->
+    <section class="services-hero" style="background: linear-gradient(135deg, rgba(13, 118, 133, 0.88), rgba(8, 80, 91, 0.92)), url('img/hero_services.png') center/cover no-repeat; padding: 100px 0 70px;">
         <div class="container text-center" style="color: white;">
-            <span class="badge" style="background: rgba(255, 255, 255, 0.2); color: white; margin-bottom: 20px; display: inline-block;">
+            <span class="badge" style="background: rgba(255, 255, 255, 0.2); color: white; margin-bottom: 18px; display: inline-block;">
                 <i class="fa-solid fa-ribbon"></i> Multidisciplinary Oncology Services
             </span>
-            <h1 class="inner-hero-title">Comprehensive Cancer Care & Healing</h1>
-            <p style="color: rgba(255, 255, 255, 0.9); font-size: 1.25rem; max-width: 800px; margin: 0 auto;">
-                From advanced chemotherapy infusion and precision radiation coordination to lifelong survivorship support, our center stands with you every step of the way.
+            <h1 class="inner-hero-title" style="font-size: clamp(2rem, 3.4vw, 2.8rem); margin-bottom: 16px;">Comprehensive Cancer Care & Healing</h1>
+            <p style="color: rgba(255, 255, 255, 0.92); font-size: 1.15rem; max-width: 780px; margin: 0 auto 28px auto; line-height: 1.65;">
+                From advanced chemotherapy infusion and precision radiation coordination to lifelong survivorship support, our multidisciplinary cancer center stands with you every step of the way.
             </p>
+            <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
+                <a href="contact.html" class="btn btn-secondary" style="padding: 12px 28px; border-radius: 30px;">
+                    <i class="fa-solid fa-calendar-check"></i> Book Appointment
+                </a>
+                <a href="contact.html" class="btn btn-primary" style="padding: 12px 28px; border-radius: 30px;">
+                    <i class="fa-solid fa-user-doctor"></i> Book Consultation
+                </a>
+                <a href="#how-we-help" class="btn btn-outline" style="padding: 12px 28px; border-radius: 30px; border-color: rgba(255,255,255,0.7); color: white; background: rgba(255,255,255,0.08);">
+                    <i class="fa-solid fa-compass"></i> Explore Care Pathways
+                </a>
+            </div>
         </div>
     </section>
 
-    <!-- Services Detail -->
-    <section class="section" style="padding-top: 80px;">
+    <!-- 2. NEW SECTION: How We Can Help You (Structured Discovery Matrix) -->
+    <section class="how-help-section" id="how-we-help">
         <div class="container">
-            <div style="display: flex; flex-direction: column; gap: 60px;">
+            <div class="section-header text-center">
+                <span class="service-content-badge category-label-primary">
+                    <i class="fa-solid fa-hand-holding-heart"></i> Patient Guidance
+                </span>
+                <h2 style="font-size: clamp(1.8rem, 2.6vw, 2.2rem); margin-bottom: 12px;">How We Can Help You</h2>
+                <p class="text-muted" style="max-width: 680px; margin: 0 auto; font-size: 1.02rem; line-height: 1.6;">
+                    Select the pathway tailored to your immediate diagnostic stage, treatment goals, or supportive oncology needs.
+                </p>
+            </div>
+
+            <div class="how-help-grid">
+                <!-- Pathway 1 -->
+                <div class="help-card-v2">
+                    <div class="help-card-icon" style="background: rgba(13, 118, 133, 0.12); color: var(--primary);">
+                        <i class="fa-solid fa-compass"></i>
+                    </div>
+                    <h3>1. Newly Diagnosed</h3>
+                    <p>
+                        Fast-track 48-hour consultation, diagnostic imaging coordination, baseline staging, and collaborative tumor board review.
+                    </p>
+                    <a href="contact.html?type=new" class="btn btn-primary">
+                        <i class="fa-solid fa-calendar-plus"></i> Book Consultation
+                    </a>
+                </div>
+
+                <!-- Pathway 2 -->
+                <div class="help-card-v2">
+                    <div class="help-card-icon" style="background: rgba(225, 29, 72, 0.12); color: var(--secondary);">
+                        <i class="fa-solid fa-microscope"></i>
+                    </div>
+                    <h3>2. Second Opinion</h3>
+                    <p>
+                        Comprehensive independent pathology re-evaluation, biomarker review, and alternative treatment comparison.
+                    </p>
+                    <a href="contact.html?type=second_opinion" class="btn btn-secondary">
+                        <i class="fa-solid fa-clipboard-question"></i> Enquire
+                    </a>
+                </div>
+
+                <!-- Pathway 3 -->
+                <div class="help-card-v2">
+                    <div class="help-card-icon" style="background: rgba(245, 158, 11, 0.15); color: var(--accent-dark);">
+                        <i class="fa-solid fa-vial-circle-check"></i>
+                    </div>
+                    <h3>3. Active Infusion Transfer</h3>
+                    <p>
+                        Transfer ongoing chemotherapy or biologics to our heated infusion suites with scalp cooling and dedicated OCN nursing.
+                    </p>
+                    <a href="contact.html?type=infusion" class="btn btn-primary">
+                        <i class="fa-solid fa-calendar-check"></i> Book Appointment
+                    </a>
+                </div>
+
+                <!-- Pathway 4 -->
+                <div class="help-card-v2">
+                    <div class="help-card-icon" style="background: rgba(16, 185, 129, 0.12); color: #059669;">
+                        <i class="fa-solid fa-headset"></i>
+                    </div>
+                    <h3>4. Symptom & Urgent Triage</h3>
+                    <p>
+                        Direct 24/7 clinical hotline for fever management, acute nausea relief, psycho-oncology, and dietitian support.
+                    </p>
+                    <a href="contact.html?type=triage" class="btn btn-outline">
+                        <i class="fa-solid fa-phone"></i> Enquire
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Services Detail Showcase (With Reduced Heading Labels & Full CTAs) -->
+    <section class="section" style="padding: 80px 0 40px 0;">
+        <div class="container">
+            <!-- Filter discovery nav -->
+            <div class="service-filter-nav">
+                <button type="button" class="service-filter-btn active" onclick="filterServices('all', this)">All Clinical Services</button>
+                <button type="button" class="service-filter-btn" onclick="filterServices('chemo', this)"><i class="fa-solid fa-vials"></i> Infusions</button>
+                <button type="button" class="service-filter-btn" onclick="filterServices('radiation', this)"><i class="fa-solid fa-radiation"></i> Radiation</button>
+                <button type="button" class="service-filter-btn" onclick="filterServices('survivorship', this)"><i class="fa-solid fa-seedling"></i> Survivorship</button>
+                <button type="button" class="service-filter-btn" onclick="filterServices('immunotherapy', this)"><i class="fa-solid fa-dna"></i> Genomics & Trials</button>
+                <button type="button" class="service-filter-btn" onclick="filterServices('palliative', this)"><i class="fa-solid fa-heart-pulse"></i> Supportive Care</button>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 45px;">
 
                 <!-- Service Item 1: Chemotherapy & Infusion -->
-                <div class="service-item-v2 reveal-v2" id="chemo">
+                <div class="service-item-v2" id="chemo" data-category="chemo">
                     <div class="service-content-col">
-                        <span class="service-content-badge" style="background: rgba(13, 118, 133, 0.12); color: var(--primary);">Clinical Excellence</span>
-                        <h2 style="font-size: 2.3rem; margin-bottom: 20px;">Chemotherapy & Targeted Infusions</h2>
-                        <p style="margin-bottom: 1.5rem; font-size: 1.15rem; color: var(--text-muted); line-height: 1.7;">
-                            Our light-filled chemotherapy infusion suites are thoughtfully designed to maximize your physical comfort and emotional calm. Equipped with heated ergonomic recliners, personal entertainment tablets, and panoramic garden views, each session is administered by Oncology Certified Nurses (OCN) with physician oversight.
+                        <span class="service-content-badge category-label-primary">
+                            <i class="fa-solid fa-vials"></i> Infusion Oncology
+                        </span>
+                        <h2>Chemotherapy & Targeted Infusions</h2>
+                        <p>
+                            Our light-filled chemotherapy infusion suites are thoughtfully designed to maximize your physical comfort and emotional calm. Equipped with heated ergonomic recliners, personal entertainment tablets, and panoramic garden views, each session is administered by Oncology Certified Nurses (OCN) with dedicated physician oversight.
                         </p>
                         <div class="feature-list-check">
                             <div class="feature-check-item">
                                 <i class="fa-solid fa-circle-check" style="color: var(--primary);"></i>
-                                <span>Advanced cold cap scalp cooling therapy to reduce hair loss.</span>
+                                <span>Advanced Paxman & DigniCap cold cap scalp cooling therapy to reduce hair loss.</span>
                             </div>
                             <div class="feature-check-item">
                                 <i class="fa-solid fa-circle-check" style="color: var(--primary);"></i>
-                                <span>On-site oncology pharmacy ensuring precise, customized dosing.</span>
+                                <span>On-site ISO-Class 7 cleanroom pharmacy ensuring precise, custom-formulated compounding.</span>
                             </div>
                             <div class="feature-check-item">
                                 <i class="fa-solid fa-circle-check" style="color: var(--primary);"></i>
-                                <span>Proactive anti-emetic protocols for nausea prevention and comfort.</span>
+                                <span>Proactive anti-emetic protocols for nausea prevention, hydration, and comfort.</span>
                             </div>
                         </div>
                         <div class="service-action-buttons">
-                            <a href="dashboard.html" class="btn btn-primary">Track Treatment Cycles</a>
-                            <a href="contact.html" class="btn btn-outline">Ask an Oncology Nurse</a>
+                            <a href="contact.html?service=chemo" class="btn btn-primary">
+                                <i class="fa-solid fa-calendar-check"></i> Book Appointment
+                            </a>
+                            <a href="contact.html?service=chemo" class="btn btn-secondary">
+                                <i class="fa-solid fa-user-doctor"></i> Book Consultation
+                            </a>
+                            <a href="contact.html?service=chemo" class="btn btn-outline">
+                                <i class="fa-solid fa-circle-question"></i> Enquire
+                            </a>
                         </div>
                     </div>
                     <div class="service-image-col">
@@ -132,12 +235,13 @@
                 </div>
 
                 <!-- Service Item 2: Radiation Coordination -->
-                <div class="service-item-v2 reveal-v2" id="radiation">
+                <div class="service-item-v2" id="radiation" data-category="radiation">
                     <div class="service-content-col">
-                        <span class="service-content-badge"
-                            style="background: rgba(225, 29, 72, 0.12); color: var(--secondary);">Advanced Technology</span>
-                        <h2 style="font-size: 2.3rem; margin-bottom: 20px;">Precision Radiation Coordination</h2>
-                        <p style="margin-bottom: 1.5rem; font-size: 1.15rem; color: var(--text-muted); line-height: 1.7;">
+                        <span class="service-content-badge category-label-secondary">
+                            <i class="fa-solid fa-radiation"></i> Radiation Coordination
+                        </span>
+                        <h2>Precision Radiation Coordination</h2>
+                        <p>
                             We provide seamless coordination with premier regional radiation oncology facilities, ensuring flawless alignment between medical oncology and radiation therapies. Our radiation coordinators guide you through 4D CT simulations, treatment mapping, and daily session logistics with minimal disruption.
                         </p>
                         <div class="feature-list-check">
@@ -147,7 +251,7 @@
                             </div>
                             <div class="feature-check-item">
                                 <i class="fa-solid fa-circle-check" style="color: var(--secondary);"></i>
-                                <span>Specialized skin barrier and fatigue prevention care plans.</span>
+                                <span>Specialized skin barrier, fatigue mitigation, and hydration care plans.</span>
                             </div>
                             <div class="feature-check-item">
                                 <i class="fa-solid fa-circle-check" style="color: var(--secondary);"></i>
@@ -155,8 +259,15 @@
                             </div>
                         </div>
                         <div class="service-action-buttons">
-                            <a href="dashboard.html" class="btn btn-secondary">View Radiation Calendar</a>
-                            <a href="contact.html" class="btn btn-outline">Consultation Request</a>
+                            <a href="contact.html?service=radiation" class="btn btn-secondary">
+                                <i class="fa-solid fa-user-doctor"></i> Book Consultation
+                            </a>
+                            <a href="contact.html?service=radiation" class="btn btn-primary">
+                                <i class="fa-solid fa-calendar-check"></i> Book Appointment
+                            </a>
+                            <a href="contact.html?service=radiation" class="btn btn-outline">
+                                <i class="fa-solid fa-circle-question"></i> Enquire
+                            </a>
                         </div>
                     </div>
                     <div class="service-image-col">
@@ -168,11 +279,13 @@
                 </div>
 
                 <!-- Service Item 3: Survivorship Support -->
-                <div class="service-item-v2 reveal-v2" id="survivorship">
+                <div class="service-item-v2" id="survivorship" data-category="survivorship">
                     <div class="service-content-col">
-                        <span class="service-content-badge" style="background: rgba(245, 158, 11, 0.15); color: var(--accent-dark);">Lifelong Wellness</span>
-                        <h2 style="font-size: 2.3rem; margin-bottom: 20px;">Comprehensive Survivorship Support</h2>
-                        <p style="margin-bottom: 1.5rem; font-size: 1.15rem; color: var(--text-muted); line-height: 1.7;">
+                        <span class="service-content-badge category-label-accent">
+                            <i class="fa-solid fa-seedling"></i> Survivorship Care
+                        </span>
+                        <h2>Comprehensive Survivorship Support</h2>
+                        <p>
                             Completing active treatment is a major milestone, yet the physical and emotional transition into survivorship brings unique needs. Our Survivorship Care Program provides personalized follow-up care plans, health surveillance schedules, and rehabilitative therapy to help you thrive beyond cancer.
                         </p>
                         <div class="feature-list-check">
@@ -190,8 +303,15 @@
                             </div>
                         </div>
                         <div class="service-action-buttons">
-                            <a href="blog.html" class="btn btn-primary">Browse Survivor Resources</a>
-                            <a href="contact.html" class="btn btn-outline">Join Support Group</a>
+                            <a href="contact.html?service=survivorship" class="btn btn-primary">
+                                <i class="fa-solid fa-calendar-plus"></i> Book Consultation
+                            </a>
+                            <a href="contact.html?service=survivorship" class="btn btn-secondary">
+                                <i class="fa-solid fa-calendar-check"></i> Book Appointment
+                            </a>
+                            <a href="contact.html?service=survivorship" class="btn btn-outline">
+                                <i class="fa-solid fa-circle-question"></i> Enquire
+                            </a>
                         </div>
                     </div>
                     <div class="service-image-col">
@@ -203,12 +323,13 @@
                 </div>
 
                 <!-- Service Item 4: Immunotherapy & Precision Medicine -->
-                <div class="service-item-v2 reveal-v2" id="immunotherapy">
+                <div class="service-item-v2" id="immunotherapy" data-category="immunotherapy">
                     <div class="service-content-col">
-                        <span class="service-content-badge"
-                            style="background: rgba(13, 118, 133, 0.12); color: var(--primary);">Genomic Science</span>
-                        <h2 style="font-size: 2.3rem; margin-bottom: 20px;">Immunotherapy & Precision Oncology</h2>
-                        <p style="margin-bottom: 1.5rem; font-size: 1.15rem; color: var(--text-muted); line-height: 1.7;">
+                        <span class="service-content-badge category-label-primary">
+                            <i class="fa-solid fa-dna"></i> Precision Genomics
+                        </span>
+                        <h2>Immunotherapy & Precision Oncology</h2>
+                        <p>
                             By analyzing the molecular DNA and RNA blueprint of your tumor, we deploy state-of-the-art immunotherapies and targeted biologics that train your immune system to detect and eradicate cancer cells with minimal impact on healthy tissues.
                         </p>
                         <div class="feature-list-check">
@@ -225,7 +346,17 @@
                                 <span>Coordination with premier clinical trials and expanded access programs.</span>
                             </div>
                         </div>
-                        <a href="contact.html" class="btn btn-primary" style="margin-top: 30px;">Request Genomic Review</a>
+                        <div class="service-action-buttons">
+                            <a href="contact.html?service=genomics" class="btn btn-primary">
+                                <i class="fa-solid fa-dna"></i> Book Consultation
+                            </a>
+                            <a href="contact.html?service=genomics" class="btn btn-secondary">
+                                <i class="fa-solid fa-calendar-check"></i> Book Appointment
+                            </a>
+                            <a href="contact.html?service=genomics" class="btn btn-outline">
+                                <i class="fa-solid fa-circle-question"></i> Enquire
+                            </a>
+                        </div>
                     </div>
                     <div class="service-image-col">
                         <div class="service-image-mask">
@@ -236,11 +367,13 @@
                 </div>
 
                 <!-- Service Item 5: Integrative Palliative & Supportive Oncology -->
-                <div class="service-item-v2 reveal-v2" id="palliative">
+                <div class="service-item-v2" id="palliative" data-category="palliative">
                     <div class="service-content-col">
-                        <span class="service-content-badge" style="background: rgba(225, 29, 72, 0.12); color: var(--secondary);">Whole-Person Care</span>
-                        <h2 style="font-size: 2.3rem; margin-bottom: 20px;">Integrative Palliative & Supportive Care</h2>
-                        <p style="margin-bottom: 1.5rem; font-size: 1.15rem; color: var(--text-muted); line-height: 1.7;">
+                        <span class="service-content-badge category-label-secondary">
+                            <i class="fa-solid fa-heart-pulse"></i> Supportive Oncology
+                        </span>
+                        <h2>Integrative Palliative & Supportive Care</h2>
+                        <p>
                             Palliative oncology focuses on relieving symptoms, pain, and stress at any stage of illness alongside curative therapies. Our multidisciplinary care team addresses neuropathy, sleep disruption, anxiety, and fatigue through both medical management and holistic evidence-based modalities.
                         </p>
                         <div class="feature-list-check">
@@ -257,7 +390,17 @@
                                 <span>Licensed psycho-oncology counseling for patients, spouses, and children.</span>
                             </div>
                         </div>
-                        <a href="dashboard.html" class="btn btn-secondary" style="margin-top: 30px;">Access Care Team Notes</a>
+                        <div class="service-action-buttons">
+                            <a href="contact.html?service=palliative" class="btn btn-secondary">
+                                <i class="fa-solid fa-user-doctor"></i> Book Consultation
+                            </a>
+                            <a href="contact.html?service=palliative" class="btn btn-primary">
+                                <i class="fa-solid fa-calendar-check"></i> Book Appointment
+                            </a>
+                            <a href="contact.html?service=palliative" class="btn btn-outline">
+                                <i class="fa-solid fa-circle-question"></i> Enquire
+                            </a>
+                        </div>
                     </div>
                     <div class="service-image-col">
                         <div class="service-image-mask">
@@ -267,6 +410,33 @@
                     </div>
                 </div>
 
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. NEW SECTION: Final CTA Section -->
+    <section class="container">
+        <div class="services-final-cta">
+            <span class="badge" style="background: rgba(255, 255, 255, 0.2); color: white; padding: 6px 18px; border-radius: 20px; font-weight: 700; margin-bottom: 18px; display: inline-block;">
+                <i class="fa-solid fa-ribbon"></i> READY TO BEGIN YOUR CARE
+            </span>
+            <h2>Start Your Healing Journey with Dedicated Oncology Experts</h2>
+            <p>
+                Whether you need a rapid first consultation, an expert second opinion, or want to transfer your infusions to our comfortable center, our oncology navigators are ready to support you.
+            </p>
+            <div class="services-final-cta-actions">
+                <a href="contact.html" class="btn btn-secondary" style="padding: 14px 32px; font-size: 1rem; border-radius: 50px;">
+                    <i class="fa-solid fa-calendar-check"></i> Book Appointment
+                </a>
+                <a href="contact.html" class="btn btn-primary" style="padding: 14px 32px; font-size: 1rem; border-radius: 50px;">
+                    <i class="fa-solid fa-user-doctor"></i> Book Consultation
+                </a>
+                <a href="contact.html" class="btn btn-outline" style="padding: 14px 32px; font-size: 1rem; border-radius: 50px; border-color: white; color: white; background: rgba(255,255,255,0.1);">
+                    <i class="fa-solid fa-circle-question"></i> Enquire
+                </a>
+                <a href="tel:1234567890" class="btn btn-outline" style="padding: 14px 28px; font-size: 1rem; border-radius: 50px; border-color: rgba(255,255,255,0.6); color: white;">
+                    <i class="fa-solid fa-phone"></i> (123) 456-7890
+                </a>
             </div>
         </div>
     </section>
@@ -296,6 +466,7 @@
                     <h4>Quick Links</h4>
                     <ul class="footer-links">
                         <li><a href="index.html">Home</a></li>
+                        <li><a href="home2.html">Home 2</a></li>
                         <li><a href="about.html">Our Team</a></li>
                         <li><a href="services.html">Services</a></li>
                         <li><a href="blog.html">Patient Resources</a></li>
@@ -337,6 +508,21 @@
     </footer>
 
     <script src="js/main.js"></script>
+    <script>
+        function filterServices(category, btn) {
+            document.querySelectorAll('.service-filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const items = document.querySelectorAll('.service-item-v2');
+            items.forEach(item => {
+                if (category === 'all' || item.getAttribute('data-category') === category) {
+                    item.style.display = 'grid';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+    </script>
 </body>
 
 </html>
