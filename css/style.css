@@ -124,7 +124,17 @@ button,
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    gap: 8px;
     font-weight: 600;
+}
+
+button i,
+.btn i {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    flex-shrink: 0;
 }
 
 /* Container */
@@ -2871,7 +2881,8 @@ button,
 }
 
 /* FAQ Accordion / Dropdown */
-.faq-accordion {
+.faq-accordion,
+.faq-container {
     max-width: 860px;
     margin: 0 auto;
     display: flex;
@@ -3018,6 +3029,78 @@ button,
     }
 }
 
+/* Home 2 FAQ Dropdown Context Spacing & Alignment */
+#home2-faq .faq-header {
+    width: 100%;
+    padding: 22px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    outline: none;
+    text-align: left;
+    user-select: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    font-family: inherit;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text-main);
+    line-height: 1.45;
+}
+
+[dir="rtl"] #home2-faq .faq-header {
+    text-align: right;
+}
+
+#home2-faq .faq-item.active .faq-header span {
+    color: var(--primary);
+}
+
+#home2-faq .faq-icon {
+    color: var(--primary);
+    font-size: 0.95rem;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    flex-shrink: 0;
+}
+
+#home2-faq .faq-item.active .faq-icon {
+    transform: rotate(180deg);
+}
+
+#home2-faq .faq-content-inner {
+    padding: 0 24px 24px 24px;
+    color: var(--text-muted);
+    font-size: 0.98rem;
+    line-height: 1.7;
+}
+
+#home2-faq .faq-content-inner p {
+    margin: 0;
+    color: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+[dir="rtl"] #home2-faq .faq-content-inner {
+    padding: 0 24px 24px 24px;
+    text-align: right;
+}
+
+@media (max-width: 640px) {
+    #home2-faq .faq-header {
+        padding: 18px 18px;
+        font-size: 0.98rem;
+    }
+    
+    #home2-faq .faq-content-inner {
+        padding: 0 18px 20px 18px;
+        font-size: 0.92rem;
+    }
+}
+
 /* Backward compatibility for legacy faq-box */
 .faq-box {
     background: var(--bg-card);
@@ -3036,10 +3119,12 @@ button,
 /* Back to Top Button */
 .back-to-top {
     position: fixed;
-    bottom: 30px;
-    right: 30px;
+    bottom: calc(30px + env(safe-area-inset-bottom, 0px));
+    right: calc(30px + env(safe-area-inset-right, 0px));
     width: 50px;
     height: 50px;
+    padding: 0;
+    margin: 0;
     background: var(--primary);
     color: white;
     border-radius: 50%;
@@ -3047,19 +3132,29 @@ button,
     align-items: center;
     justify-content: center;
     font-size: 1.25rem;
+    line-height: 1;
+    font-family: inherit;
     cursor: pointer;
     box-shadow: 0 10px 20px rgba(var(--primary-rgb), 0.3);
     z-index: 10000;
     opacity: 0;
     visibility: hidden;
+    pointer-events: none;
     transform: translateY(20px);
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     border: 2px solid rgba(255, 255, 255, 0.1);
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    user-select: none;
 }
 
 .back-to-top.show {
     opacity: 1;
     visibility: visible;
+    pointer-events: auto;
     transform: translateY(0);
 }
 
@@ -3070,7 +3165,17 @@ button,
     box-shadow: 0 15px 30px rgba(var(--secondary-rgb), 0.4);
 }
 
+.back-to-top:active {
+    transform: translateY(-2px) scale(0.96);
+}
+
+.back-to-top:focus-visible {
+    outline: 3px solid var(--secondary);
+    outline-offset: 3px;
+}
+
 .back-to-top i {
+    pointer-events: none;
     transition: transform 0.3s ease;
 }
 
@@ -3081,14 +3186,14 @@ button,
 /* RTL Support for Back to Top */
 [dir="rtl"] .back-to-top {
     right: auto;
-    left: 30px;
+    left: calc(30px + env(safe-area-inset-left, 0px));
 }
 
 /* Mobile & Tablet Adjustments */
 @media (max-width: 1024px) {
     .back-to-top {
-        bottom: 25px;
-        right: 25px;
+        bottom: calc(25px + env(safe-area-inset-bottom, 0px));
+        right: calc(25px + env(safe-area-inset-right, 0px));
         width: 45px;
         height: 45px;
         font-size: 1.1rem;
@@ -3096,21 +3201,21 @@ button,
     
     [dir="rtl"] .back-to-top {
         right: auto;
-        left: 25px;
+        left: calc(25px + env(safe-area-inset-left, 0px));
     }
 }
 
 @media (max-width: 576px) {
     .back-to-top {
-        bottom: 20px;
-        right: 20px;
+        bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+        right: calc(20px + env(safe-area-inset-right, 0px));
         width: 42px;
         height: 42px;
     }
     
     [dir="rtl"] .back-to-top {
         right: auto;
-        left: 20px;
+        left: calc(20px + env(safe-area-inset-left, 0px));
     }
 }
 
@@ -3322,6 +3427,29 @@ button,
     margin-bottom: 36px;
 }
 
+.home2-hero-actions .btn-outline,
+.home2-hero-btn-outline {
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.08);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home2-hero-actions .btn-outline:hover,
+.home2-hero-actions .btn-outline:focus-visible,
+.home2-hero-btn-outline:hover,
+.home2-hero-btn-outline:focus-visible {
+    background: #ffffff !important;
+    color: var(--primary-dark, #08505B) !important;
+    border-color: #ffffff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
 .home2-hero-trust {
     display: flex;
     gap: 24px;
@@ -3451,6 +3579,18 @@ button,
 .home2-chip:hover {
     background: var(--primary);
     color: #ffffff;
+    border-color: var(--primary);
+}
+
+.home2-chip:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(var(--primary-rgb), 0.25);
+}
+
+[data-theme="dark"] .home2-chip.active,
+[data-theme="dark"] .home2-chip:hover {
+    background: var(--primary);
+    color: #0B131E;
     border-color: var(--primary);
 }
 
@@ -3682,11 +3822,32 @@ button,
 
 /* Metrics Dashboard */
 .home2-stats-strip {
-    background: linear-gradient(135deg, var(--primary-dark), #0B131E);
+    background: linear-gradient(135deg, rgba(8, 80, 91, 0.92) 0%, rgba(11, 19, 30, 0.96) 100%), url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSAo2snkXQT7kO9V7ABrQXn9i4zigbLBKhpMJhJeiZNg&s=10') center/cover no-repeat;
     color: #ffffff;
     padding: 70px 0;
     position: relative;
     overflow: hidden;
+}
+
+.home2-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    align-items: start;
+}
+
+@media (max-width: 992px) {
+    .home2-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+}
+
+@media (max-width: 576px) {
+    .home2-stats-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
 }
 
 .home2-stat-box {
@@ -4024,6 +4185,9 @@ button,
     justify-content: center;
     font-size: 0.88rem;
     padding: 9px 16px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
 }
 
 /* Service Filter Discovery Bar */
@@ -4081,6 +4245,54 @@ button,
     max-width: 680px;
     margin: 0 auto 30px auto;
     line-height: 1.65;
+}
+
+.services-hero .btn,
+.services-final-cta-actions .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+/* Services Hero 3rd CTA Button Outline & Hover */
+.services-hero .btn-outline,
+.services-hero-btn-outline {
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.08);
+    transition: all 0.3s ease;
+}
+
+.services-hero .btn-outline:hover,
+.services-hero .btn-outline:focus-visible,
+.services-hero-btn-outline:hover,
+.services-hero-btn-outline:focus-visible {
+    background: #ffffff !important;
+    color: var(--primary-dark, #08505B) !important;
+    border-color: #ffffff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* Services Above Footer 3rd CTA Button Outline & Hover */
+.services-final-cta-actions .btn-outline,
+.services-final-btn-outline {
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.services-final-cta-actions .btn-outline:hover,
+.services-final-cta-actions .btn-outline:focus-visible,
+.services-final-btn-outline:hover,
+.services-final-btn-outline:focus-visible {
+    background: #ffffff !important;
+    color: var(--primary-dark, #08505B) !important;
+    border-color: #ffffff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
 }
 
 .services-final-cta-actions {

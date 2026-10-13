@@ -182,19 +182,65 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /* 8. Back to Top Button Injection & Logic */
-    const backToTopBtn = document.createElement('div');
-    backToTopBtn.className = 'back-to-top';
-    backToTopBtn.innerHTML = '<i class="fa-solid fa-arrow-up"></i>';
-    backToTopBtn.setAttribute('aria-label', 'Back to top');
-    document.body.appendChild(backToTopBtn);
+    let backToTopBtn = document.querySelector('.back-to-top');
+    if (!backToTopBtn) {
+        backToTopBtn = document.createElement('button');
+        backToTopBtn.type = 'button';
+        backToTopBtn.className = 'back-to-top';
+        backToTopBtn.innerHTML = '<i class="fa-solid fa-arrow-up" aria-hidden="true"></i>';
+        backToTopBtn.setAttribute('aria-label', 'Back to top');
+        backToTopBtn.setAttribute('title', 'Back to top');
+        document.body.appendChild(backToTopBtn);
+    }
 
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 300) {
+    const getScrollTop = () => {
+        return window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || window.scrollY || 0;
+    };
+
+    const toggleBackToTop = () => {
+        if (getScrollTop() > 300) {
             backToTopBtn.classList.add('show');
         } else {
             backToTopBtn.classList.remove('show');
         }
-    });
+    };
+
+    window.addEventListener('scroll', toggleBackToTop, { passive: true });
+    toggleBackToTop();
+
+    const scrollToTop = (e) => {
+        if (e) {
+            e.preventDefault();
+        }
+        let smoothSupported = false;
+        try {
+            window.scrollTo({
+                top: 0,
+                left: 0,
+                behavior: 'smooth'
+            });
+            smoothSupported = true;
+        } catch (err) {
+            window.scrollTo(0, 0);
+            document.documentElement.scrollTop = 0;
+            document.body.scrollTop = 0;
+        }
+
+        const mainContainer = document.querySelector('.dashboard-main');
+        if (mainContainer && mainContainer.scrollTop > 0) {
+            if (smoothSupported) {
+                try {
+                    mainContainer.scrollTo({ top: 0, behavior: 'smooth' });
+                } catch (err) {
+                    mainContainer.scrollTop = 0;
+                }
+            } else {
+                mainContainer.scrollTop = 0;
+            }
+        }
+    };
+
+    backToTopBtn.addEventListener('click', scrollToTop);
 
     /* 9. FAQ Accordion Dropdown */
     const faqItems = document.querySelectorAll('.faq-item');
